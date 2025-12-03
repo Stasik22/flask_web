@@ -9,18 +9,19 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: antiquewhite;
+    background-image: url("images/main_photo.jpg");
     background-size: cover; /* розтягує на весь екран */
     background-position: center; /* центрує зображення */
     background-repeat: no-repeat;
+
 }
 
 .navigation {
     display: flex;
     justify-content: center; /* вирівнювання по центру */
-    gap: 40px;
+    gap: 20px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* прозорий чорний фон */
+    background-color: rgba(0, 0, 0, 0.8); /* прозорий чорний фон */
     box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -29,8 +30,10 @@ body {
     text-decoration: none;
     padding: 5px 15px;
     border-radius: 10px;
-    font-size: 17px;
-    font-weight: bold;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 20px;
     transition: all 0.3s;
 }
 
@@ -45,69 +48,21 @@ body {
     color: #000000;
 }
 
-.slider {
-  width: 80%;
-  max-width: 800px;
-  height: 400px;
-  position: relative;
-  margin: 50px auto;
-  overflow: hidden;
-  border-radius: 10px;
+h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: "Science Gothic", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 45px;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "wdth" 200,
+        "CTRS" 0;
+    object-fit: cover;
+    margin-bottom: 0;
+    margin-top: 20px;
 }
-
-.slides {
-  display: flex;
-  width: 300%;
-  height: 100%;
-}
-
-.slide {
-  width: 100%;
-  transition: 0.6s;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-}
-
-/* Автоперемикання слайдів */
-#radio1:checked ~ .first { margin-left: 0; }
-#radio2:checked ~ .first { margin-left: -100%; }
-#radio3:checked ~ .first { margin-left: -200%; }
-
-/* Навігаційні кнопки */
-.navigation-manual {
-  position: absolute;
-  width: 100%;
-  bottom: 100px;
-  display: flex;
-  justify-content: center;
-}
-
-.manual-btn {
-  border: 2px solid #ffffff;
-  padding: 5px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-  margin: 0 5px;
-}
-
-.manual-btn:hover {
-  background: #ffffff;
-}
-
-/* Автоперемикання без JS */
-@keyframes slide {
-  0% {margin-left: 0;}
-  33% {margin-left: -100%;}
-  66% {margin-left: -200%;}
-  100% {margin-left: 0;}
-}
-
-.slides .first {
-  animation: slide 10s infinite;
-}
-
 
