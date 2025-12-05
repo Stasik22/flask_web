@@ -10,42 +10,80 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url("images/main_photo.jpg");
-    background-size: cover; /* розтягує на весь екран */
-    background-position: center; /* центрує зображення */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-
 }
+
 
 .navigation {
+    position: relative;
     display: flex;
-    justify-content: center; /* вирівнювання по центру */
-    gap: 20px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* прозорий чорний фон */
-    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
 }
+
+
+.logo-link {
+    display: inline-block;
+    margin-left: 0;
+    outline: none;
+    border: none;
+}
+
+
+.logo {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+
+.account-link {
+    margin-left: auto;
+    display: inline-block;
+}
+
+.account-logo {
+    padding-right: 10px;
+    object-fit: contain;
+    display: block;
+}
+
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+    margin-left: auto;
+}
+
+.nav-center a:hover {
+    color: #aeaeae;
+    transform: scale(1.05);
+    border-radius: 8px;
+}
+
+
 
 .navigation a {
     color: #ffffff;
     text-decoration: none;
-    padding: 5px 15px;
-    border-radius: 10px;
     font-family: "Alfa Slab One", serif;
-    font-weight: 200;
-    font-style: normal;
-    font-size: 20px;
-    transition: all 0.3s;
+    font-size: 17px;
+    transition: transform 0.5s ease;
+
 }
+
 
 .navigation a:hover {
-    background-color: #9a9a9a;
-    color: #000000;
-    transform: scale(1.05);
-}
-
-.navigation a.active {
-    background-color: #9a9a9a;
-    color: #000000;
+    color: #b6b6b6;
+    transform: scale(1.17);
 }
 
 h1 {
@@ -53,15 +91,8 @@ h1 {
     justify-content: center;
     text-align: center;
     font-family: "Science Gothic", sans-serif;
-    font-optical-sizing: auto;
     font-size: 45px;
     font-weight: 900;
-    font-style: normal;
-    font-variation-settings:
-        "slnt" 0,
-        "wdth" 200,
-        "CTRS" 0;
-    object-fit: cover;
     margin-bottom: 0;
     margin-top: 20px;
 }
