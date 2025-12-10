@@ -1,3 +1,4 @@
+/* Загальні стилі */
 html {
     scroll-behavior: smooth;
     height: 100%;
@@ -15,77 +16,101 @@ body {
     background-repeat: no-repeat;
 }
 
-
+/* Навігаційна панель */
 .navigation {
-    position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: 50px;
     height: 80px;
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
 }
 
-
+/* Лого зліва */
 .logo-link {
     display: inline-block;
-    margin-left: 0;
     outline: none;
     border: none;
 }
-
 
 .logo {
     width: 120px;
     height: auto;
     object-fit: contain;
     display: block;
+    transition: transform 0.3s ease; /* Плавне збільшення */
 }
 
-
-.account-link {
-    margin-left: auto;
-    display: inline-block;
+.logo-link:hover .logo {
+    transform: scale(1.20); /* Збільшення на 10% при наведенні */
 }
 
-.account-logo {
-    padding-right: 10px;
-    object-fit: contain;
-    display: block;
-}
-
-
+/* Навігаційне меню по центру */
 .nav-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     gap: 40px;
-    margin-left: auto;
 }
 
-.nav-center a:hover {
-    color: #aeaeae;
-    transform: scale(1.05);
-    border-radius: 8px;
-}
-
-
-
-.navigation a {
+.nav-center a {
     color: #ffffff;
     text-decoration: none;
     font-family: "Alfa Slab One", serif;
     font-size: 17px;
-    transition: transform 0.5s ease;
-
+    transition: transform 0.5s ease, color 0.5s ease;
 }
 
-
-.navigation a:hover {
+.nav-center a:hover {
     color: #b6b6b6;
-    transform: scale(1.17);
+    transform: scale(1.20);
+    border-radius: 8px;
 }
 
+/* Блок акаунту та кнопок вправо */
+.account-block {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 15px;
+}
+
+/* Іконка акаунту */
+.account-link {
+    display: inline-block;
+}
+
+.account-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+    border-radius: 50%;
+    transition: transform 0.3s ease; /* Плавне збільшення */
+}
+
+.account-link:hover .account-logo {
+    transform: scale(1.20); /* Збільшення на 10% при наведенні */
+}
+
+/* Кнопки Login та Register */
+.account-button {
+    display: inline-block;
+    padding: 6px 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Alfa Slab One", serif;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.account-button:hover {
+    color: #b6b6b6;
+    transform: scale(1.20);
+}
+
+/* Заголовки на сторінці */
 h1 {
     display: flex;
     justify-content: center;
@@ -97,3 +122,12 @@ h1 {
     margin-top: 20px;
 }
 
+h2 {
+    text-align: center;
+    font-family: "Science Gothic", sans-serif;
+}
+
+p {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
