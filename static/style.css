@@ -148,21 +148,46 @@ body {
 }
 
 .social_media_links {
+    display: flex;
     justify-content: left;
-    margin-left: 120px;
+    margin-left: 254px;
+    margin-right: 1480px;
+    gap: 20px;
 }
 
+.github_link {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.github_link:hover {
+    transform: scale(1.20);
+}
+
+.mail_link {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mail_link:hover {
+    transform: scale(1.20);
+}
 
 #supportButton {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: #007bff;
+    font-family: "Science Gothic", sans-serif;
     color: white;
     border: none;
     padding: 12px 18px;
     border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#supportButton:hover {
+    transform: scale(1.10);
 }
 
 #supportPopup {
@@ -170,7 +195,7 @@ body {
     bottom: 80px;
     right: 20px;
     width: 300px;
-    background: white;
+    background: cornflowerblue;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.25);
     display: none;
@@ -179,30 +204,52 @@ body {
 
 .popup-header {
     background: #007bff;
+    font-family: "Science Gothic", sans-serif;
     color: white;
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    border-radius: 10px;
 }
 
 .popup-body {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    border-radius: 25px;
 }
 
 .popup-body textarea {
+    font-family: "Science Gothic", sans-serif;
     resize: none;
     height: 100px;
     margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .popup-body button {
     background: #007bff;
+    font-family: "Science Gothic", sans-serif;
     color: white;
     border: none;
     padding: 8px;
     cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.popup-body button:hover {
+    transform: scale(1.04);
+}
+
+#closePopup {
+    border-radius: 10px;
+    color: black;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#closePopup:hover {
+    transform: scale(1.10);
 }
 
 

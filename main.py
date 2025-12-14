@@ -9,7 +9,6 @@ def contact():
     if request.method == "POST":
         message = request.form.get("message")
         print("New support message:", message)
-        # тут пізніше можна: зберегти в файл / БД / Telegram
         return redirect(url_for("contact"))
 
     return render_template("contact.html")

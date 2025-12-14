@@ -38,11 +38,16 @@
         <p>Email, call, or complete the form to learn how ZoomAuto can solve your messaging problem</p><wbr>
     </div>
 
-    <div class = "social_media_links">
-        <a href="mailto:stanislavmats@icloud.com">stanislavmats@icloud.com</a><br><br>
-        <a href="https://www.instagram.com/stas1k27/" target="_blank">Instagram</a><br><br>
-        <a href="https://github.com/Stasik22" target="_blank">GitHub</a><br>
+    <div class="social_media_links">
+        <div class="github_link">
+            <a href="https://github.com/Stasik22" target="_blank"></a>
+            <img src="../static/images/github_logo.png" alt="GitHub" width="50" height="50">
+        </div>
 
+         <div class="mail_link">
+             <a href="mailto:stanislavmats@icloud.com"></a>
+             <img src="../static/images/mail.png" alt="Email" width="50" height="50">
+         </div>
     </div>
 
     <button id="supportButton">Customer Support</button>
@@ -55,17 +60,17 @@
         </div>
 
         <form method="POST" class="popup-body">
-            <textarea name="message" placeholder="Write your message..." required></textarea>
+            <textarea name="message" placeholder="Write your problem" required></textarea>
             <button type="submit">Send</button>
         </form>
     </div>
 
     <script>
-    const btn = document.getElementById("supportButton");
+    const button = document.getElementById("supportButton");
     const popup = document.getElementById("supportPopup");
     const close = document.getElementById("closePopup");
 
-    btn.onclick = () => popup.style.display = "flex";
+    button.onclick = () => popup.style.display = "flex";
     close.onclick = () => popup.style.display = "none";
     </script>
 
@@ -76,7 +81,7 @@
     </section>
 
     <footer>
-        &copy; 2025 Stanislav Matsak, Trnava, Slovensko
+        &copy; 2025
     </footer>
 </body>
 </html>
