@@ -36,15 +36,44 @@
 
     <div class="contact_info">
         <p>Email, call, or complete the form to learn how ZoomAuto can solve your messaging problem</p><wbr>
-        <p>stanislavmats@icloud.com</p>
     </div>
 
-         <section class="map">
-            <h3>You can find us there</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2649.811194171704!2d17.586480477049182!3d48.38336307127174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476ca0835e979103%3A0xa0ffd0b8e0b3eb33!2sUniversity%20of%20St.%20Cyril%20and%20Methodius%20in%20Trnava!5e0!3m2!1sru!2ssk!4v1763392532127!5m2!1sru!2ssk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </section>
+    <div class = "social_media_links">
+        <a href="mailto:stanislavmats@icloud.com">stanislavmats@icloud.com</a><br><br>
+        <a href="https://www.instagram.com/stas1k27/" target="_blank">Instagram</a><br><br>
+        <a href="https://github.com/Stasik22" target="_blank">GitHub</a><br>
 
-    </main>
+    </div>
+
+    <button id="supportButton">Customer Support</button>
+
+    <!-- Popup -->
+    <div id="supportPopup">
+        <div class="popup-header">
+            <span>Customer Support</span>
+            <button id="closePopup">✖</button>
+        </div>
+
+        <form method="POST" class="popup-body">
+            <textarea name="message" placeholder="Write your message..." required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+    const btn = document.getElementById("supportButton");
+    const popup = document.getElementById("supportPopup");
+    const close = document.getElementById("closePopup");
+
+    btn.onclick = () => popup.style.display = "flex";
+    close.onclick = () => popup.style.display = "none";
+    </script>
+
+
+    <section class="map">
+        <h3>You can find us there</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2649.811194171704!2d17.586480477049182!3d48.38336307127174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476ca0835e979103%3A0xa0ffd0b8e0b3eb33!2sUniversity%20of%20St.%20Cyril%20and%20Methodius%20in%20Trnava!5e0!3m2!1sru!2ssk!4v1763392532127!5m2!1sru!2ssk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
 
     <footer>
         &copy; 2025 Stanislav Matsak, Trnava, Slovensko

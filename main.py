@@ -1,13 +1,18 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/contact')
-def about():
-    return render_template("contact.html")
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        message = request.form.get("message")
+        print("New support message:", message)
+        # тут пізніше можна: зберегти в файл / БД / Telegram
+        return redirect(url_for("contact"))
 
+    return render_template("contact.html")
 @app.route("/account")
 def account():
     return render_template("account.html")

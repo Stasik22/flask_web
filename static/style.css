@@ -147,6 +147,64 @@ body {
     line-height: 1.5;
 }
 
+.social_media_links {
+    justify-content: left;
+    margin-left: 120px;
+}
+
+
+#supportButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#supportPopup {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    display: none;
+    flex-direction: column;
+}
+
+.popup-header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.popup-body textarea {
+    resize: none;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.popup-body button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
 
 h2 {
     text-align: center;
