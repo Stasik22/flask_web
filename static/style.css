@@ -1,19 +1,23 @@
 /* Загальні стилі */
 html {
     scroll-behavior: smooth;
-    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+
 }
+
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url("images/main_photo.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 /* Навігаційна панель */
@@ -128,7 +132,8 @@ body {
     font-family: "Science Gothic", sans-serif;
     font-size: 20px;
     font-weight: 400;
-    margin-top: 150px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     margin-left: 80px;
     padding-left: 95px;
 }
@@ -137,6 +142,62 @@ body {
     display: flex;
     justify-content: left;
     margin-left: 70px;
+}
+
+.contact_container {
+    flex: 1;
+    border-radius: 25px;
+    margin-top: 100px;
+    margin-left: 270px;
+    margin-right: 800px;
+    background-color: rgba(87, 87, 87, 0.9);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.contact_container:hover {
+    transform: scale(1.10);
+}
+
+.customer_support_text {
+    border-radius: 25px;
+    padding: 10px;
+    margin-left: 40px;
+    background-color: rgba(87, 87, 87, 0.9);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.customer_support_text:hover {
+    transform: scale(1.10);
+}
+
+.feedback_sugesstion_text {
+    border-radius: 25px;
+    padding: 10px;
+    background-color: rgba(87, 87, 87, 0.9);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.feedback_sugesstion_text:hover {
+    transform: scale(1.10);
+}
+
+.media_inquiries_text {
+    border-radius: 25px;
+    padding: 10px;
+    background-color: rgba(87, 87, 87, 0.9);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.media_inquiries_text:hover {
+    transform: scale(1.10);
 }
 
 .contact_info p {
@@ -152,7 +213,7 @@ body {
     justify-content: left;
     margin-left: 254px;
     margin-right: 1480px;
-    gap: 20px;
+    cursor: pointer;
 }
 
 .github_link {
@@ -170,6 +231,19 @@ body {
 .mail_link:hover {
     transform: scale(1.20);
 }
+
+.small_inf {
+    justify-content: left;
+    margin-top: 100px;
+    margin-left: 30px;
+    font-family: "Science Gothic", sans-serif;
+    display: flex;
+    gap: 30px;
+}
+.small_inf p {
+    font-family: "Science Gothic", sans-serif;
+}
+
 
 #supportButton {
     position: fixed;
@@ -246,6 +320,7 @@ body {
     border-radius: 10px;
     color: black;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
 #closePopup:hover {
