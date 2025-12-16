@@ -7,7 +7,7 @@ def index():
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        message = request.form.get("message")
+        message = request.form.get("message" , "message1")
         print("New support message:", message)
         return redirect(url_for("contact"))
 

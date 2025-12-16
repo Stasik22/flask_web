@@ -29,29 +29,46 @@
             <a href="/register" class="account-button">Register</a>
         </div>
     </div>
-    <div class="contact_container">
-        <header class="h1_contact">
-            <h1>Contact Me</h1>
-        </header>
 
-        <div class="contact_info">
-            <p>Email, call, or complete the form to learn how ZoomAuto can solve your messaging problem</p><wbr>
+
+    <div class="cont">
+        <div class="quick_contact_form">
+            <h2>Quick Contact Form</h2>
+            <p>You can reach us anytime</p>
+            <div id="quick_contact">
+                <form method="POST" class="quick_contact_body">
+                    <textarea name="message1" placeholder="First name" required></textarea>
+                    <textarea name="message1" placeholder="Last name" required></textarea>
+                    <textarea name="message1" placeholder="Your email" required></textarea>
+                    <textarea name="message1" placeholder="Phone number" required></textarea>
+                    <textarea name="message1" placeholder="how can we help?" required></textarea>
+                    <button  class="btn_quick_contact" type="submit">Submit</button>
+                </form>
+            </div>
         </div>
+        <div class="contact_container">
+            <header class="h1_contact">
+                <h1>Contact Me</h1>
+            </header>
 
-        <div class="social_media_links">
-            <div class="github_link">
-                <a href="https://github.com/Stasik22" target="_blank"></a>
-                <img src="../static/images/github_logo.png" alt="GitHub" width="50" height="50">
+            <div class="contact_info">
+                <p>Email, call, or complete the form to learn how ZoomAuto can solve your messaging problem</p><wbr>
             </div>
 
-             <div class="mail_link">
-                 <a href="mailto:stanislavmats@icloud.com"></a>
-                 <img src="../static/images/mail.png" alt="Email" width="50" height="50">
-             </div>
-        </div>
-    </div>
+            <div class="social_media_links">
+                <div class="github_link">
+                    <a href="https://github.com/Stasik22" target="_blank"></a>
+                    <img src="../static/images/github_logo.png" alt="GitHub" width="50" height="50">
+                </div>
 
-    <div class="small_inf">
+                 <div class="mail_link">
+                     <a href="mailto:stanislavmats@icloud.com"></a>
+                     <img src="../static/images/mail.png" alt="Email" width="50" height="50">
+                 </div>
+            </div>
+        </div>
+
+        <div class="small_inf">
         <header class="customer_support_text">
             <h2>Customer Support</h2>
             <p>Our support team<br> is available around <br>the clock to address<br> any concerns or queries<br> you may have</p>
@@ -66,11 +83,11 @@
             <h2>Media Inquiries</h2>
             <p>For media-related<br> questions or press<br> inquiries, please contact<br> us at media@zoomauto.com</p>
         </header>
-
     </div>
 
     <button id="supportButton">Customer Support</button>
-    <!-- Popup -->
+
+
     <div id="supportPopup">
         <div class="popup-header">
             <span>Customer Support</span>
@@ -84,12 +101,12 @@
     </div>
 
     <script>
-    const button = document.getElementById("supportButton");
-    const popup = document.getElementById("supportPopup");
-    const close = document.getElementById("closePopup");
+        const button = document.getElementById("supportButton");
+        const popup = document.getElementById("supportPopup");
+        const close = document.getElementById("closePopup");
 
-    button.onclick = () => popup.style.display = "flex";
-    close.onclick = () => popup.style.display = "none";
+        button.onclick = () => popup.style.display = "flex";
+        close.onclick = () => popup.style.display = "none";
     </script>
 
 
@@ -101,5 +118,6 @@
     <footer>
         &copy; 2025
     </footer>
+    </div>
 </body>
 </html>
