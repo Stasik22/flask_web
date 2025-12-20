@@ -34,6 +34,33 @@
     <header class="h1_home">
         <h1>Find your ideal car at ZoomAuto</h1>
     </header>
+    <div class="car-search-container">
+        <form method="get" action="{{ url_for('search') }}" class="car-search">
+
+            <select name="brand" required>
+                <option value="">Mark</option>
+                <option value="bmw">BMW</option>
+                <option value="audi">Audi</option>
+                <option value="mercedes">Mercedes</option>
+            </select>
+
+            <select name="year" required>
+                <option value="">Year</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+            </select>
+
+            <select name="price" required>
+                <option value="">Price</option>
+                <option value="0-10000">до 10 000 €</option>
+                <option value="10000-20000">10 000 – 20 000 €</option>
+                <option value="20000-40000">20 000 – 40 000 €</option>
+            </select>
+
+            <button type="submit">🔍 Find</button>
+        </form>
+    </div>
 
     <div>
         <h2>About me</h2>

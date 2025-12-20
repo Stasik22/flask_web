@@ -520,4 +520,52 @@ p {
     text-align: left;
 }
 
+.car-search-container {
+    display: flex;
+    justify-content: center;
+}
+
+.car-search {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 25px;
+    width: 800px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.car-search select,
+.car-search button {
+    padding: 12px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: "Science Gothic", sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.car-search button {
+    background: black;
+    color: white;
+    border: none;
+    margin-left: 40px;
+    font-family: "Science Gothic", sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.car-search button:hover{
+    transform: scale(1.15);
+}
+
+.car-search select:hover {
+    transform: scale(1.10);
+}
 
