@@ -569,3 +569,26 @@ p {
     transform: scale(1.10);
 }
 
+.car-recommendation-container {
+    display: flex;
+    justify-content: center;
+}
+
+.car-recommendation {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 25px;
+    height: 1200px;
+    width: 1400px;
+    margin-top: 40px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: black;
+}
+

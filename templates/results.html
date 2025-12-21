@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Результати пошуку</title>
+</head>
+<body>
+
+<h2>Результати пошуку</h2>
+
+{% if cars %}
+    {% for car in cars %}
+        <div style="margin-bottom: 15px;">
+            <b>{{ car.model }}</b><br>
+            Марка: {{ car.brand }}<br>
+            Рік: {{ car.year }}<br>
+            Ціна: {{ car.price }} €
+        </div>
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>Нічого не знайдено 😕</p>
+{% endif %}
+
+</body>
+</html>
