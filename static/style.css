@@ -568,27 +568,109 @@ p {
 .car-search select:hover {
     transform: scale(1.10);
 }
-
 .car-recommendation-container {
     display: flex;
     justify-content: center;
 }
 
+
 .car-recommendation {
     display: flex;
-    justify-content: center;
-    gap: 12px;
-    background: white;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 25px;
-    height: 1200px;
+    flex-direction: column;
     width: 1400px;
     margin-top: 40px;
-    padding: 15px;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: black;
+    color: white;
 }
 
+
+.car-offers {
+    display: flex;
+    width: 1200px;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.car-card {
+    display: grid;
+    grid-template-columns: 260px 1fr 120px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 25px 35px;
+
+    border-radius: 22px;
+    background: linear-gradient(
+        to right,
+        rgba(40,40,40,0.85),
+        rgba(60,60,60,0.85)
+    );
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+}
+
+.car-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+}
+
+.car-card img {
+    width: 240px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+}
+
+.car-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+
+.car-card h3 {
+    font-family: "Science Gothic", sans-serif;
+    font-size: 22px;
+    margin: 0;
+    color: white;
+}
+
+.car-card p {
+    font-size: 14px;
+    opacity: 0.85;
+    margin: 0;
+}
+
+
+.car-card button {
+    height: 90px;
+    border-radius: 18px;
+    border: none;
+    background: linear-gradient(
+        to bottom,
+        #000000,
+        #1a1a1a
+    );
+    color: white;
+    font-family: "Science Gothic", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.car-card button:hover {
+    transform: scale(1.08);
+    background: linear-gradient(
+        to bottom,
+        #1a1a1a,
+        #000000
+    );
+}
