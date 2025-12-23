@@ -594,6 +594,7 @@ p {
     flex-direction: column;
     gap: 25px;
     margin-top: 25px;
+    margin-left: 60px;
 }
 
 .car-card {
@@ -613,7 +614,7 @@ p {
 
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-    cursor: pointer;
+
 }
 
 .car-card:hover {
@@ -623,11 +624,16 @@ p {
 
 .car-card img {
     width: 240px;
-    height: auto;
+    height: 144px;
     object-fit: contain;
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
 }
 
+.car-card img:hover {
+    transform: scale(1.15);
+}
 .car-info {
     display: flex;
     flex-direction: column;

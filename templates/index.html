@@ -3,106 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../static/images/main_logo.png" type="image/png">
-    <link rel="stylesheet" href="../static/style.css">
+
+    <title>ZoomAuto</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='images/main_logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Science+Gothic:wght@700&display=swap" rel="stylesheet">
-    <title>Home</title>
 </head>
 
 <body>
-    <div class="navigation">
-        <a href="/" class="logo-link">
-            <img src="../static/images/main_logo.png" alt="main_logo" class="logo">
+
+<!-- NAVIGATION -->
+<div class="navigation">
+    <a href="/" class="logo-link">
+        <img src="{{ url_for('static', filename='images/main_logo.png') }}"
+             alt="ZoomAuto logo" class="logo">
+    </a>
+
+    <nav class="nav-center">
+        <a href="/"><b>Home</b></a>
+        <a href="/contact"><b>Contact</b></a>
+    </nav>
+
+    <div class="account-block">
+        <a href="/account" class="account-link">
+            <img src="{{ url_for('static', filename='images/account_icon.png') }}"
+                 alt="Account" class="account-logo">
         </a>
-        <nav class="nav-center">
-            <a href="/" title="Home Page"><b>Home</b></a>
-            <a href="/contact" title="Contact me"><b>Contact</b></a>
-        </nav>
-
-        <div class="account-block">
-            <a href="/account" class="account-link">
-                <img src="../static/images/account_icon.png" alt="account_logo" class="account-logo">
-            </a>
-            <a href="/login" class="account-button">Login</a>
-            <a href="/register" class="account-button">Register</a>
-        </div>
+        <a href="/login" class="account-button">Login</a>
+        <a href="/register" class="account-button">Register</a>
     </div>
+</div>
 
-    <header class="h1_home">
-        <h1>Find your ideal car at ZoomAuto</h1>
-    </header>
-    <div class="car-search-container">
-        <form method="get" action="{{ url_for('search') }}" class="car-search">
+<!-- HEADER -->
+<header class="h1_home">
+    <h1>Find your ideal car at ZoomAuto</h1>
+</header>
 
-            <select name="brand" required>
-                <option value="">Mark</option>
-                <option value="bmw">BMW</option>
-                <option value="audi">Audi</option>
-                <option value="mercedes">Mercedes</option>
-            </select>
+<!-- SEARCH -->
+<div class="car-search-container">
+    <form method="get" action="{{ url_for('search') }}" class="car-search">
 
-            <select name="year" required>
-                <option value="">Year</option>
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-            </select>
+        <select name="brand" required>
+            <option value="">Brand</option>
+            <option value="bmw">BMW</option>
+            <option value="audi">Audi</option>
+            <option value="alfa romeo">Alfa Romeo</option>
+        </select>
 
-            <select name="price" required>
-                <option value="">Price</option>
-                <option value="0-10000">до 10 000 €</option>
-                <option value="10000-20000">10 000 – 20 000 €</option>
-                <option value="20000-40000">20 000 – 40 000 €</option>
-            </select>
+        <select name="year" required>
+            <option value="">Year</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+        </select>
 
-            <button type="submit">🔍 Find</button>
-        </form>
-    </div>
+        <select name="price" required>
+            <option value="">Price</option>
+            <option value="0-20000">до 20 000 €</option>
+            <option value="20000-30000">20 000 – 30 000 €</option>
+            <option value="30000-40000">30 000 – 40 000 €</option>
+        </select>
 
+        <button type="submit">🔍 Find</button>
+    </form>
+</div>
 
-    <div class="car-recommendation-container">
+<!-- RECOMMENDATIONS -->
+<div class="car-recommendation-container">
+    <div class="car-recommendation">
 
-        <div class="car-recommendation">
-            <h2>ZoomAuto Car Recommendation</h2>
+        <h2>ZoomAuto Car Recommendation</h2>
 
-            <div class="car-offers">
-                <div class="car-card">
-                    <img src="../static/images/alfa.png" alt="Alfa Romeo">
-                        <div class="car-info">
-                            <h3>Alfa Romeo Giulia</h3>
-                            <p>2022 • 2.0 Turbo • 28 000 €</p>
-                        </div>
-                    <button>View offer</button>
+        <div class="car-offers">
+            {% for car in cars %}
+            <div class="car-card">
+
+                <img src="{{ url_for('static', filename=car.image) }}"
+                     alt="{{ car.name }}">
+
+                <div class="car-info">
+                    <h3>{{ car.name }}</h3>
+                    <p>
+                        {{ car.year }} • {{ car.brand|title }} •
+                        {{ "{:,}".format(car.price).replace(",", " ") }} €
+                    </p>
                 </div>
 
-                <div class="car-card">
-                    <img src="../static/images/alfa.png" alt="BMW">
-                    <div class="car-info">
-                        <h3>BMW 3 Series</h3>
-                        <p>2023 • 2.0 Diesel • 32 000 €</p>
-                    </div>
-                    <button>View offer</button>
-                </div>
-
-                <div class="car-card">
-                    <img src="../static/images/alfa.png" alt="Audi">
-                    <div class="car-info">
-                        <h3>Audi A4</h3>
-                        <p>2021 • 2.0 TFSI • 29 500 €</p>
-                    </div>
-                    <button>View offer</button>
-                </div>
+                <button>View offer</button>
             </div>
+            {% endfor %}
         </div>
 
     </div>
+</div>
 
+<!-- ABOUT -->
+<div class="about-section">
+    <h2>About me</h2>
+    <p>
+        ZoomAuto is a demo project built with Flask and PostgreSQL.
+        All cars are loaded dynamically from the database.
+    </p>
+</div>
 
-    <div>
-        <h2>About me</h2>
-        <p>SDadsopdaksdkaspadsoaosdppkoas</p>
-    </div>
 </body>
 </html>
