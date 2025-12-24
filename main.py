@@ -6,7 +6,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# 🔑 PostgreSQL connection
+
 app.config["SQLALCHEMY_DATABASE_URI"] = \
 "postgresql://zoomuser:strongpassword@localhost:5432/zoomauto"
 
@@ -14,7 +14,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-# ===== MODEL (ПОВИННА ВІДПОВІДАТИ ТАБЛИЦІ В POSTGRESQL) =====
+
 class Car(db.Model):
     __tablename__ = "car"   # 🔴 ОБОВʼЯЗКОВО
 
@@ -25,7 +25,7 @@ class Car(db.Model):
     price = db.Column(db.Integer, nullable=False)
     image = db.Column(db.String(200), nullable=False)
 
-# ===== ROUTES =====
+
 @app.route('/')
 def index():
     cars = Car.query.all()
