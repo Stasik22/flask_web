@@ -618,8 +618,7 @@ p {
 }
 
 .car-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.50);
 }
 
 .car-card img {
@@ -657,7 +656,7 @@ p {
 
 
 .car-card button {
-    height: 90px;
+    height: 70px;
     border-radius: 18px;
     border: none;
     background: linear-gradient(

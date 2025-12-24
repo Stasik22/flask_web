@@ -6,8 +6,8 @@
 
     <title>ZoomAuto</title>
 
-    <link rel="icon" href="{{ url_for('static', filename='images/main_logo.png') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="../static/images/main_logo.png" type="image/png">
+    <link rel="stylesheet" href="../static/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
 
 <body>
 
-<!-- NAVIGATION -->
+
 <div class="navigation">
     <a href="/" class="logo-link">
         <img src="{{ url_for('static', filename='images/main_logo.png') }}"
@@ -38,12 +38,12 @@
     </div>
 </div>
 
-<!-- HEADER -->
+
 <header class="h1_home">
     <h1>Find your ideal car at ZoomAuto</h1>
 </header>
 
-<!-- SEARCH -->
+
 <div class="car-search-container">
     <form method="get" action="{{ url_for('search') }}" class="car-search">
 
@@ -72,7 +72,7 @@
     </form>
 </div>
 
-<!-- RECOMMENDATIONS -->
+
 <div class="car-recommendation-container">
     <div class="car-recommendation">
 
@@ -83,7 +83,7 @@
             <div class="car-card">
 
                 <img src="{{ url_for('static', filename=car.image) }}"
-                     alt="{{ car.name }}">
+                     alt="car.name">
 
                 <div class="car-info">
                     <h3>{{ car.name }}</h3>
