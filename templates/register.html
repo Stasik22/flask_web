@@ -48,19 +48,26 @@
                         <label for="register">Register</label>
                     </div>
                     <div class="auth-forms">
-                        <form method="POST" class="auth-form login-form">
-                            <textarea placeholder="Email"></textarea>
-                            <textarea placeholder="Password"></textarea>
-                            <button class="btn_registration">Login</button>
-                        </form>
 
-                        <form method="POST" class="auth-form register-form">
-                            <textarea placeholder="First name"></textarea>
-                            <textarea placeholder="Last name"></textarea>
-                            <textarea placeholder="Email"></textarea>
-                            <button class="btn_registration">Register</button>
-                        </form>
-                    </div>
+                        <!-- LOGIN -->
+                    <form method="POST" class="auth-form login-form">
+                        {{ login_form.hidden_tag() }}
+                        {{ login_form.username }}
+                        {{ login_form.password }}
+                        {{ login_form.submit }}
+                    </form>
+
+                    <!-- REGISTER -->
+                    <form method="POST" class="auth-form register-form">
+                        {{ register_form.hidden_tag() }}
+                        {{ register_form.username }}
+                        {{ register_form.email }}
+                        {{ register_form.password }}
+                        {{ register_form.submit }}
+                    </form>
+
+                </div>
+
                 </div>
             </div>
 
