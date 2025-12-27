@@ -34,44 +34,45 @@
     </div>
 </div>
 
-    <div class="registration_container">
-        <div class="registration_form">
-            <img src="../static/images/alfa.png" alt="alfa" class="registration_img">
-            <div class="registration_body">
-                <div class="auth-wrapper">
-                    <input type="radio" name="auth" id="login" checked>
-                    <input type="radio" name="auth" id="register">
+<div class="registration_container">
+    <div class="register-form">
+        <img src="../static/images/alfa.png" alt="alfa" class="login_img">
 
-                    <div class="auth-toggle">
-                        <div class="toggle-bg"></div>
-                        <label for="login">Login</label>
-                        <label for="register">Register</label>
-                    </div>
-                    <div class="auth-forms">
+        <div class="registration_body">
+            <div class="auth-wrapper">
+                <input type="radio" name="auth" id="login" checked>
+                <input type="radio" name="auth" id="register">
 
-                        <!-- LOGIN -->
-                    <form method="POST" class="auth-form login-form">
-                        {{ login_form.hidden_tag() }}
-                        {{ login_form.username }}
-                        {{ login_form.password }}
-                        {{ login_form.submit }}
-                    </form>
-
-                    <!-- REGISTER -->
-                    <form method="POST" class="auth-form register-form">
-                        {{ register_form.hidden_tag() }}
-                        {{ register_form.username }}
-                        {{ register_form.email }}
-                        {{ register_form.password }}
-                        {{ register_form.submit }}
-                    </form>
-
+                <div class="auth-toggle">
+                    <div class="toggle-bg"></div>
+                    <label for="login">Login</label>
+                    <label for="register">Register</label>
                 </div>
+
+
+                <div class="auth-forms">
+
+                    <form method="POST" action="" class="auth-form register-form">
+                        {{ form.hidden_tag() }}
+                        {{ form.username }}
+                        {{ form.email }}
+                        {{ form.password }}
+                        {{ form.submit}}
+                    </form>
+
+
+                    <form method="POST" action="" class="auth-form login-form">
+                        {{ form.hidden_tag() }}
+                        {{ form.username }}
+                        {{ form.password }}
+                        {{ form.submit }}
+                    </form>
 
                 </div>
             </div>
-
         </div>
     </div>
+</div>
+
 </body>
 </html>
