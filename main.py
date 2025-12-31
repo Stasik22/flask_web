@@ -12,7 +12,6 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 
-from werkzeug.security import check_password_hash
 from flask_bcrypt import Bcrypt
 
 load_dotenv()
@@ -20,15 +19,13 @@ load_dotenv()
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 
-
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "dev-secret-key")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-login_manager = LoginManager()
-login_manager.init_app(app)
+login_manager = LoginManager(app)
 login_manager.login_view = "login"
 
 
@@ -66,11 +63,10 @@ class RegistrationForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    username = StringField(
-        validators=[InputRequired(), Length(min=3, max=20)],render_kw={"placeholder": "username"})
-    password = PasswordField(
-        validators=[InputRequired(), Length(min=8, max=20)],render_kw={"placeholder": "password"})
+    username = StringField(validators=[InputRequired(), Length(min=3, max=20)],render_kw={"placeholder": "username"})
+    password = PasswordField(validators=[InputRequired(), Length(min=8, max=20)],render_kw={"placeholder": "password"})
     submit = SubmitField("Login")
+
 
 
 
@@ -78,13 +74,10 @@ class LoginForm(FlaskForm):
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-
-
 @app.route("/")
 def index():
     cars = Car.query.all()
     return render_template("index.html", cars=cars)
-
 
 @app.route("/search")
 def search():
@@ -106,6 +99,7 @@ def search():
     return render_template("results.html", cars=cars)
 
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     login_form = LoginForm()
@@ -113,9 +107,10 @@ def login():
 
     if login_form.validate_on_submit():
         user = User.query.filter_by(username=login_form.username.data).first()
-        if user and check_password_hash(user.password, login_form.password.data):
+
+        if user and bcrypt.check_password_hash(user.password, login_form.password.data):
             login_user(user)
-            return redirect(url_for("dashboard"))
+            return redirect(url_for("index"))
 
     return render_template(
         "register.html",
@@ -126,23 +121,25 @@ def login():
 
 @app.route("/register", methods=["POST"])
 def register():
-    form = RegistrationForm()
+    register_form = RegistrationForm()
 
-    if form.validate_on_submit():
+    if register_form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(
-            form.password.data
+            register_form.password.data
         ).decode("utf-8")
 
         user = User(
-            username=form.username.data,
-            email=form.email.data,
+            username=register_form.username.data,
+            email=register_form.email.data,
             password=hashed_password
         )
+
         db.session.add(user)
         db.session.commit()
+        login_user(user)
 
+        return redirect(url_for("index"))
     return redirect(url_for("login"))
-
 
 @app.route("/dashboard")
 @login_required
@@ -154,21 +151,17 @@ def dashboard():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("account"))
+    return redirect(url_for("login"))
 
 
-@app.route("/contact", methods=["GET", "POST"])
+@app.route("/contact")
 def contact():
-    if request.method == "POST":
-        message = request.form.get("message")
-        print("New support message:", message)
-        return redirect(url_for("contact"))
     return render_template("contact.html")
 
 
 @app.route("/account")
 def account():
-    return render_template("account.html")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
