@@ -1,0 +1,144 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hello", "hi", "hey", "good morning", "good evening", "yo", "sup", "howdy"],
+      "responses": ["Hello!", "Hey there!", "Hi, how can I help you today?", "Greetings!"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "see you", "goodbye", "later", "catch you later", "talk to you soon"],
+      "responses": ["Goodbye!", "See you later!", "Take care!", "Have a nice day!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thank you", "thanks", "thanks a lot", "thx", "appreciate it", "much obliged"],
+      "responses": ["You're welcome!", "Glad to help!", "Anytime!", "No problem!"]
+    },
+    {
+      "tag": "age",
+      "patterns": ["how old are you", "what's your age", "how old is florian", "your age?", "how long have you existed"],
+      "responses": ["My owner Florian is 21 years old!", "Florian is 21!", "21 years and going strong!"]
+    },
+    {
+      "tag": "name",
+      "patterns": ["what is your name", "who are you", "tell me your name", "do you have a name?", "what should I call you?"],
+      "responses": ["You can call me Neural.", "I'm Neural, the assistant of Florian!", "Neural is my name!"]
+    },
+    {
+      "tag": "creator",
+      "patterns": ["who made you", "who created you", "who is your developer", "who built you", "your creator?"],
+      "responses": ["I was created by Florian!", "Florian built me to assist you.", "My developer is Florian."]
+    },
+    {
+      "tag": "help",
+      "patterns": ["help", "can you help me", "i need help", "what can you do", "assist me"],
+      "responses": ["I'm here to help with stocks, books, coding, and more!", "Ask me anything about Florian, his work, or general topics!"]
+    },
+    {
+      "tag": "shop",
+      "patterns": ["i want to buy something", "do you sell books?", "what do you sell", "what are your products?", "where can I buy stuff?"],
+      "responses": ["NeuralNine has a seven-part Python book series and free content on YouTube and the blog!"]
+    },
+    {
+      "tag": "hours",
+      "patterns": ["what are your hours", "when are you open", "hours of operation", "are you 24/7?"],
+      "responses": ["We're open 24/7!", "Always available, anytime you need!"]
+    },
+    {
+      "tag": "stocks",
+      "patterns": ["what stocks do I own?", "how are my shares?", "list my portfolio", "what are my investments?", "stock status"],
+      "responses": ["You own: ABBV, AAPL, FB, NVDA.", "Your portfolio includes ABBV, AAPL, Facebook, and NVIDIA."]
+    },
+    {
+      "tag": "joke",
+      "patterns": ["tell me a joke", "make me laugh", "funny joke please", "say something funny"],
+      "responses": ["Why do programmers prefer dark mode? Because light attracts bugs!", "I told my computer I needed a break, and it said 'No problem, I'll crash for you.'"]
+    },
+    {
+      "tag": "python",
+      "patterns": ["what is python?", "tell me about python", "what is python used for?", "do you know python?"],
+      "responses": ["Python is a popular programming language used for web development, data science, automation, and more!", "Yes! Python is one of my specialties."]
+    },
+    {
+      "tag": "florian",
+      "patterns": ["who is florian?", "tell me about florian", "what does florian do?", "florian info"],
+      "responses": ["Florian is a software developer and content creator who runs NeuralNine.", "Florian writes books, creates YouTube videos, and shares tech knowledge."]
+    },
+    {
+      "tag": "youtube",
+      "patterns": ["do you have a youtube?", "youtube channel?", "where is your youtube?", "neuralnine youtube?"],
+      "responses": ["Yes! Florian's YouTube is called NeuralNine. Check it out for coding tutorials and tech videos!"]
+    },
+    {
+      "tag": "weather",
+      "patterns": ["what's the weather?", "is it raining?", "how's the weather today?", "weather update"],
+      "responses": ["I can't check live weather yet, but you can ask me about anything else!"]
+    },
+    {
+      "tag": "time",
+      "patterns": ["what time is it?", "current time?", "do you know the time?", "can you tell me the time?"],
+      "responses": ["I'm not connected to real-time data yet, but I'm working on it!"]
+    },
+    {
+      "tag": "date",
+      "patterns": ["what's the date?", "what day is it?", "current date?", "today's date?"],
+      "responses": ["I'm not hooked to a calendar yet, but ask me anything else!"]
+    },
+    {
+      "tag": "hobby",
+      "patterns": ["what's your hobby?", "what do you like to do?", "do you have hobbies?", "favorite pastime?"],
+      "responses": ["I like chatting with you and learning new things!", "Helping people is my favorite hobby."]
+    },
+    {
+      "tag": "mood",
+      "patterns": ["how are you?", "how's it going?", "how do you feel?", "what's up?"],
+      "responses": ["I'm always feeling great when you're here!", "Ready to help, as always!"]
+    },
+    {
+      "tag": "location",
+      "patterns": ["where are you?", "where do you live?", "what's your location?", "your address?"],
+      "responses": ["I live in the cloud — wherever you are, I'm nearby!", "I'm in cyberspace, assisting from anywhere!"]
+    },
+    {
+      "tag": "book",
+      "patterns": ["what books do you have?", "recommend a book", "best book on python", "neuralnine books"],
+      "responses": ["Florian has a 7-part Python book series available online!", "Check out the Python basics and AI/ML books by NeuralNine!"]
+    },
+    {
+      "tag": "language",
+      "patterns": ["what languages do you speak?", "can you speak other languages?", "do you understand Ukrainian?", "language support?"],
+      "responses": ["I can understand and respond in English, and a bit in other languages too!", "Currently, I'm best with English."]
+    },
+    {
+      "tag": "chatbot",
+      "patterns": ["are you a robot?", "are you AI?", "are you real?", "what are you?"],
+      "responses": ["I'm an AI chatbot created to assist you!", "I'm Neural, a virtual assistant powered by code."]
+    },
+    {
+      "tag": "fun_fact",
+      "patterns": ["tell me a fun fact", "do you know a fact?", "give me trivia", "interesting fact please"],
+      "responses": ["Did you know the first computer programmer was Ada Lovelace in the 1800s?", "Python was named after Monty Python, not the snake!"]
+    },
+    {
+      "tag": "neuralnetworks",
+      "patterns": ["what are neural networks?", "explain neural networks", "how do neural networks work?"],
+      "responses": ["Neural networks are algorithms modeled after the human brain, great for tasks like image recognition and language processing!"]
+    },
+    {
+      "tag": "ai_use",
+      "patterns": ["how is AI used?", "where is AI used?", "real life AI examples", "AI applications"],
+      "responses": ["AI is used in healthcare, finance, self-driving cars, recommendation systems, and more!"]
+    },
+    {
+      "tag": "joke_programming",
+      "patterns": ["programming joke", "developer joke", "tech joke"],
+      "responses": ["Why do Java developers wear glasses? Because they don’t C#.", "I would tell you a UDP joke, but you might not get it."]
+    },
+    {
+      "tag": "neuralnine",
+      "patterns": ["what is neuralnine?", "neuralnine meaning", "who runs neuralnine?"],
+      "responses": ["NeuralNine is Florian's brand for books, videos, and tutorials on programming, AI, and tech."]
+    }
+  ]
+}

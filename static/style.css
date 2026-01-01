@@ -678,7 +678,7 @@ p {
     );
 }
 
-/* ===== CONTAINER ===== */
+
 .registration_container {
     display: flex;
     justify-content: center;
@@ -686,7 +686,7 @@ p {
     min-height: 90vh;
 }
 
-/* ===== MAIN CARD ===== */
+
 .register-form {
     width: 1400px;
     height: 700px;
@@ -705,7 +705,6 @@ p {
     color: white;
 }
 
-/* ===== LEFT TEXT ===== */
 .register-form p {
     max-width: 480px;
     font-family: "Science Gothic", sans-serif;
@@ -713,13 +712,13 @@ p {
     line-height: 1.6;
 }
 
-/* ===== IMAGE ===== */
+
 .login_img {
     width: 320px;
     align-self: center;
 }
 
-/* ===== RIGHT AUTH PANEL ===== */
+
 .auth-wrapper {
     margin-left: auto;
     width: 420px;
@@ -734,12 +733,12 @@ p {
     align-items: center;
 }
 
-/* ===== HIDE RADIOS ===== */
+
 .auth-wrapper input[type="radio"] {
     display: none;
 }
 
-/* ===== TOGGLE ===== */
+
 .auth-toggle {
     position: relative;
     width: 320px;
@@ -760,7 +759,7 @@ p {
     font-family: "Science Gothic", sans-serif;
 }
 
-/* SLIDER */
+
 .toggle-bg {
     position: absolute;
     top: 3px;
@@ -773,18 +772,18 @@ p {
     transition: 0.4s ease;
 }
 
-/* SLIDE */
+
 #register:checked ~ .auth-toggle .toggle-bg {
     transform: translateX(100%);
 }
 
-/* ACTIVE LABEL */
+
 #login:checked ~ .auth-toggle label[for="login"],
 #register:checked ~ .auth-toggle label[for="register"] {
     color: black;
 }
 
-/* ===== FORMS ===== */
+
 .auth-forms {
     width: 100%;
     position: relative;
@@ -797,7 +796,7 @@ p {
     animation: fadeUp 0.4s ease;
 }
 
-/* SHOW */
+
 #login:checked ~ .auth-forms .login_form {
     display: flex;
 }
@@ -806,7 +805,7 @@ p {
     display: flex;
 }
 
-/* ===== INPUTS ===== */
+
 .auth-form input {
     padding: 12px 16px;
     border-radius: 20px;
@@ -818,7 +817,7 @@ p {
     outline: none;
 }
 
-/* ===== BUTTON ===== */
+
 .auth-form input[type="submit"] {
     margin-top: 10px;
     background: #333;
@@ -831,7 +830,7 @@ p {
     transform: scale(1.05);
 }
 
-/* ===== ANIMATION ===== */
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -843,7 +842,6 @@ p {
     }
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 1100px) {
     .register-form {
         flex-direction: column;
