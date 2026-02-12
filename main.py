@@ -51,9 +51,9 @@ class User(db.Model, UserMixin):
 
 
 class RegistrationForm(FlaskForm):
-    username = StringField(validators=[InputRequired(), Length(min=3, max=20)],render_kw={"placeholder": "username"})
-    email = StringField(validators=[InputRequired(), Length(min=5, max=80)],render_kw={"placeholder": "email"})
-    password = PasswordField(validators=[InputRequired(), Length(min=8, max=20)],render_kw={"placeholder": "password"})
+    username = StringField(validators=[InputRequired(), Length(min=3, max=20)],render_kw={"placeholder": "Username"})
+    email = StringField(validators=[InputRequired(), Length(min=5, max=80)],render_kw={"placeholder": "Email"})
+    password = PasswordField(validators=[InputRequired(), Length(min=8, max=20)],render_kw={"placeholder": "Password"})
     submit = SubmitField("Register")
 
     def validate_username(self, username):
@@ -62,8 +62,8 @@ class RegistrationForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    username = StringField(validators=[InputRequired(), Length(min=3, max=20)],render_kw={"placeholder": "username"})
-    password = PasswordField(validators=[InputRequired(), Length(min=8, max=20)],render_kw={"placeholder": "password"})
+    username = StringField(validators=[InputRequired(), Length(min=3, max=20)],render_kw={"placeholder": "Username"})
+    password = PasswordField(validators=[InputRequired(), Length(min=8, max=20)],render_kw={"placeholder": "Password"})
     submit = SubmitField("Login")
 
 
@@ -118,7 +118,7 @@ def login():
     )
 
 
-@app.route("/register", methods=["POST"])
+@app.route("/register", methods=["GET", "POST"])
 def register():
     register_form = RegistrationForm()
 
@@ -156,7 +156,6 @@ def logout():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
-
 
 @app.route("/account")
 def account():

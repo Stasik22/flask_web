@@ -3,16 +3,17 @@ html {
     margin: 0;
     padding: 0;
     min-height: 100%;
-
+    background-color: #333333;
 }
-
 
 body {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url("images/main_photo.jpg");
+    background-image: url("images/backgrounds/main/main_photo.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -131,20 +132,20 @@ body {
 
 .h1_contact {
     display: flex;
-    justify-content: flex-start;
+    text-align: center;
     font-family: "Science Gothic", sans-serif;
     font-size: 20px;
     font-weight: 400;
     margin-top: 20px;
     margin-bottom: 30px;
-    margin-left: 80px;
+    margin-left: 50px;
     padding-left: 95px;
 }
 
 .contact_info {
     display: flex;
     justify-content: left;
-    margin-left: 70px;
+    margin-left: 25px;
 }
 
 .contact_container {
@@ -367,7 +368,7 @@ body {
     position: fixed;
     bottom: 80px;
     right: 20px;
-    width: 300px;
+    width: 450px;
     background: cornflowerblue;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.25);
@@ -396,7 +397,7 @@ body {
 .popup-body textarea {
     font-family: "Science Gothic", sans-serif;
     resize: none;
-    height: 100px;
+    height: 400px;
     margin-bottom: 10px;
     border-radius: 10px;
 }
@@ -683,26 +684,11 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;
-}
-
-
-.register-form {
-    width: 1400px;
-    height: 700px;
-    margin-top: 50px;
-
-    display: flex;
-    gap: 60px;
-    padding: 40px;
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    border-radius: 25px;
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-
-    color: white;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .register-form p {
@@ -717,17 +703,64 @@ p {
     width: 320px;
     align-self: center;
 }
+.container_photo {
+    width: 100%;
+    max-width: 1400px;
+    height: 80vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 30px;
+    overflow: hidden;
+    background-size: cover;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    background-image: url("images/backgrounds/main/main_photo.jpg");
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.background_container {
+    width: 100%;
+    max-width: 2000px;
+    height: 65vh;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    overflow: hidden;
+    background-size: cover;
+    animation: bgChange 10s infinite;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes bgChange {
+  0% {
+    background-image: url("../static/images/backgrounds/register_login/register_login1.png");
+  }
+  50% {
+    background-image: url("../static/images/backgrounds/register_login/register_login2.png");
+  }
+  100% {
+    background-image: url("../static/images/backgrounds/register_login/register_login3.png");
+  }
+}
 
 
 .auth-wrapper {
-    margin-left: auto;
     width: 420px;
-
+    height: 420px;
+    margin-right: 30px;
+    margin-left: 30px;
     padding: 30px;
     border-radius: 25px;
-    background: rgba(87,87,87,0.9);
+    background: rgba(87,87,87,0.5);
+    backdrop-filter: blur(10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.35);
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -744,8 +777,7 @@ p {
     width: 320px;
     height: 46px;
     margin-bottom: 30px;
-
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.30);
     border-radius: 30px;
     display: flex;
 }
@@ -805,10 +837,9 @@ p {
     display: flex;
 }
 
-
 .auth-form input {
     padding: 12px 16px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     font-family: "Science Gothic", sans-serif;
 }
@@ -816,7 +847,6 @@ p {
 .auth-form input:focus {
     outline: none;
 }
-
 
 .auth-form input[type="submit"] {
     margin-top: 10px;

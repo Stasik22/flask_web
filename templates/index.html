@@ -6,7 +6,7 @@
 
     <title>ZoomAuto</title>
 
-    <link rel="icon" href="../static/images/main_logo.png" type="image/png">
+    <link rel="icon" href="../static/images/logo's/main_logo.png" type="image/png">
     <link rel="stylesheet" href="../static/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,33 +16,24 @@
 
 <body>
 
-
 <div class="navigation">
-    <a href="/" class="logo-link">
-        <img src="{{ url_for('static', filename='images/main_logo.png') }}"
-             alt="ZoomAuto logo" class="logo">
-    </a>
-
-    <nav class="nav-center">
-        <a href="/"><b>Home</b></a>
-        <a href="/contact"><b>Contact</b></a>
-    </nav>
-
-    <div class="account-block">
-        <a href="/account" class="account-link">
-            <img src="{{ url_for('static', filename='images/account_icon.png') }}"
-                 alt="Account" class="account-logo">
+        <a href="/" class="logo-link">
+            <img src="../static/images/logo's/main_logo.png" alt="main_logo" class="logo">
         </a>
-        <a href="/register" class="account-button">Register</a>
+        <nav class="nav-center">
+            <a href="/" title="Home Page"><b>Home</b></a>
+            <a href="/contact"><b>Contact</b></a>
+        </nav>
 
-        {% if current_user.is_authenticated %}
-            <span>Hello, {{ current_user.username }}</span>
-            <a href="/logout">Logout</a>
-        {% else %}
-            <a href="/login">Login</a>
-        {% endif %}
+
+        <div class="account-block">
+            <a href="/account" class="account-link">
+                <img src="../static/images/icons/account_icon.png" alt="account_logo" class="account-logo">
+            </a>
+            <a href="/login" class="account-button">Login</a>
+            <a href="/register" class="account-button">Register</a>
+        </div>
     </div>
-</div>
 
 
 <header class="h1_home">

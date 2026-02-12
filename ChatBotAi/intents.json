@@ -2,143 +2,146 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["hello", "hi", "hey", "good morning", "good evening", "yo", "sup", "howdy"],
-      "responses": ["Hello!", "Hey there!", "Hi, how can I help you today?", "Greetings!"]
+      "patterns": [
+        "Hello",
+        "Hi",
+        "Hey",
+        "Good day",
+        "Is anyone here?",
+        "Hi there"
+      ],
+      "responses": [
+        "Hello! 👋 How can I help you today?",
+        "Hi! 😊 What can I assist you with?",
+        "Hey! I'm here to help."
+      ]
     },
     {
       "tag": "goodbye",
-      "patterns": ["bye", "see you", "goodbye", "later", "catch you later", "talk to you soon"],
-      "responses": ["Goodbye!", "See you later!", "Take care!", "Have a nice day!"]
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Thanks, bye",
+        "Exit"
+      ],
+      "responses": [
+        "Goodbye! 👋 Have a great day!",
+        "Thanks for contacting us!",
+        "See you soon 😊"
+      ]
     },
     {
       "tag": "thanks",
-      "patterns": ["thank you", "thanks", "thanks a lot", "thx", "appreciate it", "much obliged"],
-      "responses": ["You're welcome!", "Glad to help!", "Anytime!", "No problem!"]
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "Appreciate it",
+        "Thanks a lot",
+        "Much appreciated"
+      ],
+      "responses": [
+        "You're welcome! 😊",
+        "Happy to help!",
+        "Anytime!"
+      ]
     },
     {
-      "tag": "age",
-      "patterns": ["how old are you", "what's your age", "how old is florian", "your age?", "how long have you existed"],
-      "responses": ["My owner Florian is 21 years old!", "Florian is 21!", "21 years and going strong!"]
+      "tag": "order_status",
+      "patterns": [
+        "Where is my order?",
+        "Order status",
+        "Track my order",
+        "Has my order been shipped?",
+        "I want to track my order"
+      ],
+      "responses": [
+        "Please provide your order number so I can check the status 📦",
+        "Sure! Send me your order ID."
+      ]
     },
     {
-      "tag": "name",
-      "patterns": ["what is your name", "who are you", "tell me your name", "do you have a name?", "what should I call you?"],
-      "responses": ["You can call me Neural.", "I'm Neural, the assistant of Florian!", "Neural is my name!"]
+      "tag": "refund",
+      "patterns": [
+        "I want a refund",
+        "How can I get my money back?",
+        "Refund request",
+        "Return my order",
+        "I want to return a product"
+      ],
+      "responses": [
+        "I'm sorry to hear that 😔 Please provide your order number to start the refund process.",
+        "Refunds are possible within 14 days. Can you share your order ID?"
+      ]
     },
     {
-      "tag": "creator",
-      "patterns": ["who made you", "who created you", "who is your developer", "who built you", "your creator?"],
-      "responses": ["I was created by Florian!", "Florian built me to assist you.", "My developer is Florian."]
+      "tag": "payment_issue",
+      "patterns": [
+        "Payment failed",
+        "My card was charged but no order",
+        "Problem with payment",
+        "I can't pay",
+        "Payment error"
+      ],
+      "responses": [
+        "Sorry for the inconvenience 💳 Please describe the issue or provide a screenshot if possible.",
+        "Payment issues happen sometimes. Let me help you with that."
+      ]
     },
     {
-      "tag": "help",
-      "patterns": ["help", "can you help me", "i need help", "what can you do", "assist me"],
-      "responses": ["I'm here to help with stocks, books, coding, and more!", "Ask me anything about Florian, his work, or general topics!"]
+      "tag": "account_problem",
+      "patterns": [
+        "I can't log in",
+        "Forgot my password",
+        "Account problem",
+        "I can't access my account",
+        "Login issue"
+      ],
+      "responses": [
+        "Try resetting your password using the 'Forgot password' link 🔐",
+        "I can help with account access. Are you getting any error messages?"
+      ]
     },
     {
-      "tag": "shop",
-      "patterns": ["i want to buy something", "do you sell books?", "what do you sell", "what are your products?", "where can I buy stuff?"],
-      "responses": ["NeuralNine has a seven-part Python book series and free content on YouTube and the blog!"]
+      "tag": "contact_support",
+      "patterns": [
+        "I want to talk to support",
+        "Contact customer service",
+        "Live agent",
+        "Human support",
+        "Call support"
+      ],
+      "responses": [
+        "You can contact our support team at support@example.com 📧",
+        "A live agent will be with you shortly ⏳"
+      ]
     },
     {
-      "tag": "hours",
-      "patterns": ["what are your hours", "when are you open", "hours of operation", "are you 24/7?"],
-      "responses": ["We're open 24/7!", "Always available, anytime you need!"]
+      "tag": "working_hours",
+      "patterns": [
+        "Working hours",
+        "When are you open?",
+        "Support hours",
+        "When can I contact support?"
+      ],
+      "responses": [
+        "Our support team works Monday–Friday, 9:00–18:00 ⏰",
+        "We are available on business days from 9 AM to 6 PM."
+      ]
     },
     {
-      "tag": "stocks",
-      "patterns": ["what stocks do I own?", "how are my shares?", "list my portfolio", "what are my investments?", "stock status"],
-      "responses": ["You own: ABBV, AAPL, FB, NVDA.", "Your portfolio includes ABBV, AAPL, Facebook, and NVIDIA."]
-    },
-    {
-      "tag": "joke",
-      "patterns": ["tell me a joke", "make me laugh", "funny joke please", "say something funny"],
-      "responses": ["Why do programmers prefer dark mode? Because light attracts bugs!", "I told my computer I needed a break, and it said 'No problem, I'll crash for you.'"]
-    },
-    {
-      "tag": "python",
-      "patterns": ["what is python?", "tell me about python", "what is python used for?", "do you know python?"],
-      "responses": ["Python is a popular programming language used for web development, data science, automation, and more!", "Yes! Python is one of my specialties."]
-    },
-    {
-      "tag": "florian",
-      "patterns": ["who is florian?", "tell me about florian", "what does florian do?", "florian info"],
-      "responses": ["Florian is a software developer and content creator who runs NeuralNine.", "Florian writes books, creates YouTube videos, and shares tech knowledge."]
-    },
-    {
-      "tag": "youtube",
-      "patterns": ["do you have a youtube?", "youtube channel?", "where is your youtube?", "neuralnine youtube?"],
-      "responses": ["Yes! Florian's YouTube is called NeuralNine. Check it out for coding tutorials and tech videos!"]
-    },
-    {
-      "tag": "weather",
-      "patterns": ["what's the weather?", "is it raining?", "how's the weather today?", "weather update"],
-      "responses": ["I can't check live weather yet, but you can ask me about anything else!"]
-    },
-    {
-      "tag": "time",
-      "patterns": ["what time is it?", "current time?", "do you know the time?", "can you tell me the time?"],
-      "responses": ["I'm not connected to real-time data yet, but I'm working on it!"]
-    },
-    {
-      "tag": "date",
-      "patterns": ["what's the date?", "what day is it?", "current date?", "today's date?"],
-      "responses": ["I'm not hooked to a calendar yet, but ask me anything else!"]
-    },
-    {
-      "tag": "hobby",
-      "patterns": ["what's your hobby?", "what do you like to do?", "do you have hobbies?", "favorite pastime?"],
-      "responses": ["I like chatting with you and learning new things!", "Helping people is my favorite hobby."]
-    },
-    {
-      "tag": "mood",
-      "patterns": ["how are you?", "how's it going?", "how do you feel?", "what's up?"],
-      "responses": ["I'm always feeling great when you're here!", "Ready to help, as always!"]
-    },
-    {
-      "tag": "location",
-      "patterns": ["where are you?", "where do you live?", "what's your location?", "your address?"],
-      "responses": ["I live in the cloud — wherever you are, I'm nearby!", "I'm in cyberspace, assisting from anywhere!"]
-    },
-    {
-      "tag": "book",
-      "patterns": ["what books do you have?", "recommend a book", "best book on python", "neuralnine books"],
-      "responses": ["Florian has a 7-part Python book series available online!", "Check out the Python basics and AI/ML books by NeuralNine!"]
-    },
-    {
-      "tag": "language",
-      "patterns": ["what languages do you speak?", "can you speak other languages?", "do you understand Ukrainian?", "language support?"],
-      "responses": ["I can understand and respond in English, and a bit in other languages too!", "Currently, I'm best with English."]
-    },
-    {
-      "tag": "chatbot",
-      "patterns": ["are you a robot?", "are you AI?", "are you real?", "what are you?"],
-      "responses": ["I'm an AI chatbot created to assist you!", "I'm Neural, a virtual assistant powered by code."]
-    },
-    {
-      "tag": "fun_fact",
-      "patterns": ["tell me a fun fact", "do you know a fact?", "give me trivia", "interesting fact please"],
-      "responses": ["Did you know the first computer programmer was Ada Lovelace in the 1800s?", "Python was named after Monty Python, not the snake!"]
-    },
-    {
-      "tag": "neuralnetworks",
-      "patterns": ["what are neural networks?", "explain neural networks", "how do neural networks work?"],
-      "responses": ["Neural networks are algorithms modeled after the human brain, great for tasks like image recognition and language processing!"]
-    },
-    {
-      "tag": "ai_use",
-      "patterns": ["how is AI used?", "where is AI used?", "real life AI examples", "AI applications"],
-      "responses": ["AI is used in healthcare, finance, self-driving cars, recommendation systems, and more!"]
-    },
-    {
-      "tag": "joke_programming",
-      "patterns": ["programming joke", "developer joke", "tech joke"],
-      "responses": ["Why do Java developers wear glasses? Because they don’t C#.", "I would tell you a UDP joke, but you might not get it."]
-    },
-    {
-      "tag": "neuralnine",
-      "patterns": ["what is neuralnine?", "neuralnine meaning", "who runs neuralnine?"],
-      "responses": ["NeuralNine is Florian's brand for books, videos, and tutorials on programming, AI, and tech."]
+      "tag": "unknown",
+      "patterns": [
+        "asdfgh",
+        "???",
+        "I don't understand",
+        "Random text"
+      ],
+      "responses": [
+        "Sorry, I didn't quite understand that 🤔",
+        "Can you please rephrase your question?",
+        "I'm not sure about that. Could you clarify?"
+      ]
     }
   ]
 }

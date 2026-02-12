@@ -5,7 +5,7 @@ import pickle
 import nltk
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
-
+from training import bag
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open("intents.json").read())
 
@@ -13,13 +13,20 @@ words = pickle.load(open("words.pkl", "rb"))
 classes = pickle.load(open("classes.pkl", "rb"))
 model = load_model("chatbotmodel.h5")
 
+model.compile(
+    loss="categorical_crossentropy",
+    optimizer="sgd",
+    metrics=["accuracy"]
+)
+
+
+
 def clean_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
     return [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
 
 def bag_of_words(sentence):
     sentence_words = clean_sentence(sentence)
-    bag = [0] * len(words)
     for sw in sentence_words:
         for i, word in enumerate(words):
             if word == sw:

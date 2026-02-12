@@ -4,51 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZoomAuto</title>
-
-    <link rel="icon" href="{{ url_for('static', filename='images/main_logo.png') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="../static/images/logo's/main_logo.png" type="image/icon type">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 
 <div class="navigation">
     <a href="/" class="logo-link">
-        <img src="{{ url_for('static', filename='images/main_logo.png') }}" class="logo" alt="logo">
+        <img src="../static/images/logo's/main_logo.png" class="logo" alt="logo">
     </a>
 </div>
 
 <div class="registration_container">
-    <div class="register-form">
-        <img src="{{ url_for('static', filename='images/alfa.png') }}" class="logo" alt="alfa">
+    <div class="container_photo">
+            <div class="auth-wrapper">
+                <input type="radio" name="auth" id="login" checked>
+                <input type="radio" name="auth" id="register">
 
-        <div class="auth-wrapper">
-            <input type="radio" name="auth" id="login" checked>
-            <input type="radio" name="auth" id="register">
+                <div class="auth-toggle">
+                    <label for="login">Login</label>
+                    <label for="register">Register</label>
+                </div>
 
-            <div class="auth-toggle">
-                <label for="login">Login</label>
-                <label for="register">Register</label>
+                <div class="auth-forms">
+                    <form method="POST" action="/register" class="auth-form registration_form">
+                        {{ register_form.hidden_tag() }}
+                        {{ register_form.username }}
+                        {{ register_form.email }}
+                        {{ register_form.password }}
+                        {{ register_form.submit }}
+                    </form>
+
+                    <form method="POST" action="/login" class="auth-form login_form">
+                        {{ login_form.hidden_tag() }}
+                        {{ login_form.username }}
+                        {{ login_form.password }}
+                        {{ login_form.submit }}
+                    </form>
+                </div>
             </div>
-
-            <div class="auth-forms">
-                <form method="POST" action="/register" class="auth-form registration_form">
-                    {{ register_form.hidden_tag() }}
-                    {{ register_form.username }}
-                    {{ register_form.email }}
-                    {{ register_form.password }}
-                    {{ register_form.submit }}
-                </form>
-
-                <form method="POST" action="/login" class="auth-form login_form">
-                    {{ login_form.hidden_tag() }}
-                    {{ login_form.username }}
-                    {{ login_form.password }}
-                    {{ login_form.submit }}
-                </form>
-
-            </div>
+        <div class="background_container">
         </div>
     </div>
-</div>
+</div>>
 
 </body>
 </html>
