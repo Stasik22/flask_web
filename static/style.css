@@ -706,7 +706,7 @@ p {
 .container_photo {
     width: 100%;
     max-width: 1400px;
-    height: 80vh;
+    height: 75vh;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -777,9 +777,10 @@ p {
     width: 320px;
     height: 46px;
     margin-bottom: 30px;
-    background: rgba(255,255,255,0.30);
+    background: rgba(255, 255, 255, 0.30);
     border-radius: 30px;
     display: flex;
+    overflow: hidden;
 }
 
 .auth-toggle label {
@@ -789,6 +790,7 @@ p {
     cursor: pointer;
     z-index: 2;
     font-family: "Science Gothic", sans-serif;
+    transition: 0.3s;
 }
 
 
@@ -796,12 +798,11 @@ p {
     position: absolute;
     top: 3px;
     left: 3px;
-    width: calc(50% - 6px);
+    width: calc(50% - 3px);
     height: calc(100% - 6px);
-
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    background: linear-gradient(135deg, darkgray, grey);
     border-radius: 30px;
-    transition: 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 
