@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Science+Gothic:wght@700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <div class="navigation">
@@ -34,46 +33,14 @@
         </div>
 </div>
 
-
-<header class="h1_home">
-    <h1>Find your ideal car at ZoomAuto</h1>
-</header>
-
-
-<div class="car-search-container">
-    <form method="get" action="{{ url_for('search') }}" class="car-search">
-
-        <select name="brand" required>
-            <option value="">Brand</option>
-            <option value="bmw">BMW</option>
-            <option value="audi">Audi</option>
-            <option value="alfa romeo">Alfa Romeo</option>
-        </select>
-
-        <select name="year" required>
-            <option value="">Year</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-        </select>
-
-        <select name="price" required>
-            <option value="">Price</option>
-            <option value="0-20000">до 20 000 €</option>
-            <option value="20000-30000">20 000 – 30 000 €</option>
-            <option value="30000-40000">30 000 – 40 000 €</option>
-        </select>
-
-        <button type="submit">🔍 Find</button>
-    </form>
+<div class="search_h2">
+    <h2>Results of the search</h2>
 </div>
 
-
+{% if cars %}
+    {% for car in cars %}
 <div class="car-recommendation-container">
     <div class="car-recommendation">
-
-        <h2>ZoomAuto Car Recommendation</h2>
-
         <div class="car-offers">
             {% for car in cars %}
             <div class="car-card">
@@ -88,7 +55,7 @@
                         {{ "{:,}".format(car.price).replace(",", " ") }} €
                     </p>
                 </div>
-                <button><a href="{{ url_for('offers') }}">View offer</a></button>
+                <button>View offer</button>
             </div>
             {% endfor %}
         </div>
@@ -96,14 +63,10 @@
     </div>
 </div>
 
-
-<div class="about-section">
-    <h2>About me</h2>
-    <p>
-        ZoomAuto is a demo project built with Flask and PostgreSQL.
-        All cars are loaded dynamically from the database.
-    </p>
-</div>
-
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>Нічого не знайдено 😕</p>
+{% endif %}
 </body>
 </html>

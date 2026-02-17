@@ -95,7 +95,7 @@ def search():
         query = query.filter(Car.price.between(price_min, price_max))
 
     cars = query.all()
-    return render_template("results.html", cars=cars)
+    return render_template("search.html", cars=cars)
 
 
 
@@ -151,6 +151,10 @@ def dashboard():
 def logout():
     logout_user()
     return redirect(url_for("login"))
+
+@app.route("/offers")
+def offers():
+    return render_template("offers.html")
 
 
 @app.route("/contact")
