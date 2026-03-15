@@ -18,17 +18,37 @@
         </a>
         <nav class="nav-center">
             <a href="/" title="Home Page"><b>Home</b></a>
+            <a href="/contact"><b>Contact</b></a>
         </nav>
 
-
         <div class="account-block">
-            <a href="/account" class="account-link">
-                <img src="../static/images/icons/account_icon.png" alt="account_logo" class="account-logo">
-            </a>
-            <a href="/login" class="account-button">Login</a>
-            <a href="/register" class="account-button">Register</a>
-        </div>
-    </div>
+
+    {% if current_user.is_authenticated %}
+
+        <details class="account-dropdown">
+        <summary>
+            <img src="../static/images/icons/account_icon.png" alt="account_logo" class="account-icon">
+        </summary>
+            <div class="dropdown-menu">
+                <span class="username">
+                    {{ current_user.username }}
+                </span>
+
+                <a href="/dashboard">My account</a>
+                <a href="/favorites">Favorites</a><hr>
+                <a href="/settings">Settings</a><hr>
+                <a href="/logout">Logout</a>
+            </div>
+        </details>
+
+    {% else %}
+        <a href="/login" class="account-button">Login</a>
+        <a href="/register" class="account-button">Register</a>
+
+    {% endif %}
+
+</div>
+</div>
 
 
     <div class="cont">

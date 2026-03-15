@@ -55,7 +55,7 @@
                         {{ "{:,}".format(car.price).replace(",", " ") }} €
                     </p>
                 </div>
-                <button>View offer</button>
+                <button><a href="{{ url_for('offers') }}">View offer</a></button>
             </div>
             {% endfor %}
         </div>

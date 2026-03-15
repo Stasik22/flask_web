@@ -97,8 +97,6 @@ def search():
     cars = query.all()
     return render_template("search.html", cars=cars)
 
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     login_form = LoginForm()
@@ -109,6 +107,7 @@ def login():
 
         if user and bcrypt.check_password_hash(user.password, login_form.password.data):
             login_user(user)
+            print("LOGGED:", user.username)
             return redirect(url_for("index"))
 
     return render_template(
@@ -116,7 +115,6 @@ def login():
         login_form=login_form,
         register_form=register_form
     )
-
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -152,16 +150,17 @@ def logout():
     logout_user()
     return redirect(url_for("login"))
 
-@app.route("/offers")
-def offers():
-    return render_template("offers.html")
+@app.route("/offers/<int:car_id>")
+def offer(car_id):
+    car = Car.query.get_or_404(car_id)
+    return render_template("offers.html", car=car)
 
 
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
 
-@app.route("/account")
+@app.route("/account", methods=["GET", "POST"])
 def account():
     return redirect(url_for("login"))
 

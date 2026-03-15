@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,14 +24,33 @@
             <a href="/contact"><b>Contact</b></a>
         </nav>
 
-
         <div class="account-block">
-            <a href="/account" class="account-link">
-                <img src="../static/images/icons/account_icon.png" alt="account_logo" class="account-logo">
-            </a>
-            <a href="/login" class="account-button">Login</a>
-            <a href="/register" class="account-button">Register</a>
-        </div>
+
+    {% if current_user.is_authenticated %}
+
+        <details class="account-dropdown">
+        <summary>
+            <img src="../static/images/icons/account_icon.png" alt="account_logo" class="account-icon">
+        </summary>
+            <div class="dropdown-menu">
+                <span class="username">
+                    {{ current_user.username }}
+                </span>
+
+                <a href="/dashboard">My account</a>
+                <a href="/favorites">Favorites</a><hr>
+                <a href="/settings">Settings</a><hr>
+                <a href="/logout">Logout</a>
+            </div>
+        </details>
+
+    {% else %}
+        <a href="/login" class="account-button">Login</a>
+        <a href="/register" class="account-button">Register</a>
+
+    {% endif %}
+
+</div>
 </div>
 
 
@@ -78,8 +97,7 @@
             {% for car in cars %}
             <div class="car-card">
 
-                <img src="{{ url_for('static', filename=car.image) }}"
-                     alt="car.name">
+                <img src="{{ url_for('static', filename=car.image) }}" alt="car.name">
 
                 <div class="car-info">
                     <h3>{{ car.name }}</h3>
@@ -88,7 +106,7 @@
                         {{ "{:,}".format(car.price).replace(",", " ") }} €
                     </p>
                 </div>
-                <button><a href="{{ url_for('offers') }}">View offer</a></button>
+                <button><a href="{{ url_for('offer', car_id=car.id) }}" class="btn">View offer</a></button>
             </div>
             {% endfor %}
         </div>

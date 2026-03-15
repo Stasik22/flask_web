@@ -1,10 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZoomAuto</title>
+
+    <link rel="icon" href="../static/images/logo's/main_logo.png" type="image/png">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Science+Gothic:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>Hello you've already logged in </p>
+<div class="navigation">
+        <a href="/" class="logo-link">
+            <img src="../static/images/logo's/main_logo.png" alt="main_logo" class="logo">
+        </a>
+        <nav class="nav-center">
+            <a href="/" title="Home Page"><b>Home</b></a>
+            <a href="/contact"><b>Contact</b></a>
+        </nav>
+
+        <div class="account-block">
+
+    {% if current_user.is_authenticated %}
+
+        <details class="account-dropdown">
+        <summary>
+            <img src="../static/images/icons/account_icon.png" alt="account_logo" class="account-icon">
+        </summary>
+            <div class="dropdown-menu">
+                <span class="username">
+                    {{ current_user.username }}
+                </span>
+
+                <a href="/dashboard">My account</a>
+                <a href="/favorites">Favorites</a><hr>
+                <a href="/settings">Settings</a><hr>
+                <a href="/logout">Logout</a>
+            </div>
+        </details>
+
+    {% else %}
+        <a href="/login" class="account-button">Login</a>
+        <a href="/register" class="account-button">Register</a>
+
+    {% endif %}
+</div>
+</div>
+
+<div class="account-c">
+    <div class="account-block"></div>
+</div>
+
 </body>
 </html>
