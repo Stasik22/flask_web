@@ -143,6 +143,30 @@ def register():
 def dashboard():
     return render_template("dashboard.html")
 
+@app.route("/dashboard/account" ,methods=["GET", "POST"])
+@login_required
+def dashboard_account():
+    return render_template("account.html")
+
+@app.route("/dashboard/favorites", methods=["GET", "POST"])
+@login_required
+def dashboard_favorites():
+    return render_template("favorites.html")
+
+@app.route("/dashboard/helpdesk", methods=["GET", "POST"])
+@login_required
+def dashboard_helpdesk():
+    return render_template("helpdesk.html")
+
+@app.route("/dashboard/saved", methods=["GET", "POST"])
+@login_required
+def dashboard_saved():
+    return render_template("saved.html")
+
+@app.route("/dashboard/settings", methods=["GET", "POST"])
+@login_required
+def dashboard_settings():
+    return render_template("settings.html")
 
 @app.route("/logout")
 @login_required

@@ -34,9 +34,9 @@
                 <span class="username">
                     {{ current_user.username }}
                 </span>
-
                 <a href="/dashboard">My account</a>
                 <a href="/favorites">Favorites</a><hr>
+                <a href="/helpdesk">Helpdesk</a>
                 <a href="/settings">Settings</a><hr>
                 <a href="/logout">Logout</a>
             </div>
@@ -45,13 +45,25 @@
     {% else %}
         <a href="/login" class="account-button">Login</a>
         <a href="/register" class="account-button">Register</a>
-
     {% endif %}
 </div>
 </div>
+<div class="account-page">
+    <div class="account-container">
+        <p>My Account</p>
+        <ul>
+            <li><a href="/dashboard/account">My account</a></li>
+            <li><a href="/dashboard/favorites">Favorites</a></li>
+            <li><a href="/dashboard/saved">Saved</a></li><hr>
+            <li><a href="/dashboard/helpdesk">Helpdesk</a></li>
+            <li><a href="/dashboard/settings">Settings</a></li><hr>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
 
-<div class="account-c">
-    <div class="account-block"></div>
+    <div class="account-c">
+    </div>
+
 </div>
 
 </body>

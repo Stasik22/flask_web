@@ -978,15 +978,12 @@ p {
 }
 
 
-/* ---------- container ---------- */
 
 .account-dropdown {
     position: relative;
     display: inline-block;
 }
 
-
-/* ---------- summary reset ---------- */
 
 summary {
     list-style: none;
@@ -997,8 +994,6 @@ summary::-webkit-details-marker {
     display: none;
 }
 
-
-/* ---------- icon ---------- */
 
 .account-icon {
     width: 42px;
@@ -1016,8 +1011,6 @@ summary::-webkit-details-marker {
 }
 
 
-/* ---------- dropdown ---------- */
-
 .dropdown-menu {
 
     position: absolute;
@@ -1029,7 +1022,6 @@ summary::-webkit-details-marker {
 
     border-radius: 14px;
 
-    /* glass effect */
 
     background: rgba(255,255,255,0.18);
     backdrop-filter: blur(16px) saturate(140%);
@@ -1041,7 +1033,6 @@ summary::-webkit-details-marker {
         0 20px 40px rgba(0,0,0,0.25),
         0 5px 10px rgba(0,0,0,0.08);
 
-    /* start state */
 
     opacity: 0;
     transform: translateY(-18px) scale(0.92);
@@ -1054,8 +1045,6 @@ summary::-webkit-details-marker {
 }
 
 
-/* ---------- open animation ---------- */
-
 .account-dropdown[open] .dropdown-menu {
 
     opacity: 1;
@@ -1063,9 +1052,6 @@ summary::-webkit-details-marker {
 
     pointer-events: auto;
 }
-
-
-/* ---------- links ---------- */
 
 .dropdown-menu a {
 
@@ -1091,4 +1077,73 @@ summary::-webkit-details-marker {
     background: rgba(255, 255, 255, 0.6);
     transform: translateX(5px);
     color: black;
+}
+
+.account-page {
+    display: flex;
+    gap: 25px;
+    margin: 40px 60px;
+    min-height: 80vh;
+}
+
+.account-container {
+    width: 260px;
+    height: 435px;
+    min-width: 290px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.account-container p {
+    font-family: "Science Gothic", sans-serif;
+    font-size: 22px;
+    color: black;
+}
+
+.account-c {
+    flex: 1;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    color: white;
+}
+
+.account-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: "Science Gothic", sans-serif;
+    color: black;
+}
+
+
+.account-container li {
+    margin-bottom: 8px;
+}
+
+
+.account-container li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+
+.account-container li a:hover {
+    background: rgba(255,255,255,0.20);
+    padding-left: 18px;
+}
+
+
+.account-container li a.active {
+    background: rgba(255,255,255,0.40);
 }
