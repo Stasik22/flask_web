@@ -1104,7 +1104,8 @@ summary::-webkit-details-marker {
 }
 
 .account-c {
-    flex: 1;
+    display: flex;
+    align-items: flex-start;
     padding: 30px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.12);
@@ -1146,4 +1147,30 @@ summary::-webkit-details-marker {
 
 .account-container li a.active {
     background: rgba(255,255,255,0.40);
+}
+
+.account-icon1 {
+    margin-top: 15px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 50%;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.account-icon1:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.username_my_account {
+    flex: 1;
+    justify-content: center;
+    padding: 30px;
+    font-family: "Science Gothic", sans-serif;
+    color: #111;
+    font-size: 18px;
 }

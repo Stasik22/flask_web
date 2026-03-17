@@ -18,6 +18,7 @@
 <div class="navigation">
         <a href="/" class="logo-link">
             <img src="../static/images/logo's/main_logo.png" alt="main_logo" class="logo">
+
         </a>
         <nav class="nav-center">
             <a href="/" title="Home Page"><b>Home</b></a>
@@ -29,9 +30,9 @@
     {% if current_user.is_authenticated %}
 
         <details class="account-dropdown">
-        <summary>
-            <img src="../static/images/icons/account_icon.png" alt="account_logo" class="account-icon">
-        </summary>
+            <summary>
+                <img src="{{ url_for('static',filename='images/users_icon_upload/' +(current_user.image or 'account_icon.png')) }}" alt="account_logo" class="account-icon">
+            </summary>
             <div class="dropdown-menu">
                 <span class="username">
                     {{ current_user.username }}

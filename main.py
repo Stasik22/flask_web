@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 import os
 
@@ -8,7 +9,7 @@ from flask_login import (
     current_user, login_required, LoginManager
 )
 
-from flask_wtf import FlaskForm
+from flask_wtf import FlaskForm, file
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
@@ -26,7 +27,6 @@ db = SQLAlchemy(app)
 
 login_manager = LoginManager(app)
 login_manager.login_view = "login"
-
 
 
 class Car(db.Model):
@@ -47,6 +47,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
+    image = db.Column(db.String(200))
 
 
 
@@ -65,8 +66,6 @@ class LoginForm(FlaskForm):
     username = StringField(validators=[InputRequired(), Length(min=3, max=20)],render_kw={"placeholder": "Username"})
     password = PasswordField(validators=[InputRequired(), Length(min=8, max=20)],render_kw={"placeholder": "Password"})
     submit = SubmitField("Login")
-
-
 
 
 @login_manager.user_loader
@@ -143,9 +142,28 @@ def register():
 def dashboard():
     return render_template("dashboard.html")
 
-@app.route("/dashboard/account" ,methods=["GET", "POST"])
+
+UPLOAD_FOLDER = "static/images/users_icon_upload"
+ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+@app.route("/dashboard/account", methods=["GET", "POST"])
 @login_required
 def dashboard_account():
+    if request.method == "POST":
+        image = request.files.get("image")
+        if image and image.filename != "":
+            filename = secure_filename(image.filename)
+            path = os.path.join(
+                app.config["UPLOAD_FOLDER"],
+                filename
+            )
+            image.save(path)
+            current_user.image = filename
+            db.session.commit()
+
+            return redirect(url_for("dashboard_account"))
     return render_template("account.html")
 
 @app.route("/dashboard/favorites", methods=["GET", "POST"])
