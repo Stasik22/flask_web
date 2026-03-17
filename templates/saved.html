@@ -28,7 +28,7 @@
 
         <details class="account-dropdown">
         <summary>
-            <img src="../static/images/icons/account_icon.png" alt="account_logo" class="account-icon">
+            <img src="{{ url_for('static',filename='images/users_icon_upload/' + (current_user.image or 'account_icon.png')) }}" class="account-icon">
         </summary>
             <div class="dropdown-menu">
                 <span class="username">

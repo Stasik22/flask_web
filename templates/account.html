@@ -63,31 +63,19 @@
 
     <div class="account-c">
 
-    <img src="{{ url_for('static',filename='images/users_icon_upload/' +(current_user.image or 'account_icon.png')) }}" class="account-icon1">
+    <img src="{{ url_for('static', filename='images/users_icon_upload/' + (current_user.image or 'account_icon.png')) }}" class="account-icon1">
 
     <span class="username_my_account">
         {{ current_user.username }}
     </span>
 
-
-    <div class="photo_edit">
-
-        <form
-        method="POST"
-        enctype="multipart/form-data"
-        action="{{ url_for('dashboard_account') }}"
-        class="photo_change"
-        >
-
-            <input type="file" name="image">
-
-            <button type="submit">
-                Upload
-            </button>
-
-        </form>
-
-    </div>
+        <div class="photo_edit">
+            <form method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                {{ form.file() }}
+                {{ form.submit() }}
+            </form>
+        </div>
 
 </div>
 

@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from flask_wtf.file import FileRequired
 from werkzeug.utils import secure_filename
+from wtforms import SubmitField, FileField
 from dotenv import load_dotenv
 import os
 
@@ -142,29 +144,25 @@ def register():
 def dashboard():
     return render_template("dashboard.html")
 
+app.config['UPLOAD_FOLDER'] = 'static/images/users_icon_upload'
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
-UPLOAD_FOLDER = "static/images/users_icon_upload"
-ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+class FileUploadForm(FlaskForm):
+    file = FileField("File", validators=[FileRequired()])
+    submit = SubmitField("Upload")
 
 @app.route("/dashboard/account", methods=["GET", "POST"])
 @login_required
 def dashboard_account():
-    if request.method == "POST":
-        image = request.files.get("image")
-        if image and image.filename != "":
-            filename = secure_filename(image.filename)
-            path = os.path.join(
-                app.config["UPLOAD_FOLDER"],
-                filename
-            )
-            image.save(path)
-            current_user.image = filename
-            db.session.commit()
-
-            return redirect(url_for("dashboard_account"))
-    return render_template("account.html")
+    form = FileUploadForm()
+    if form.validate_on_submit():
+        file = form.file.data
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        current_user.image = filename
+        db.session.commit()
+        return redirect(url_for("dashboard_account"))
+    return render_template("account.html", form=form)
 
 @app.route("/dashboard/favorites", methods=["GET", "POST"])
 @login_required
