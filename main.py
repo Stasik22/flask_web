@@ -49,7 +49,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
-    image = db.Column(db.String(200))
+    image = db.Column(db.String(200), nullable=False, default="static/users_icon_upload/account_icon.png")
 
 
 
@@ -151,10 +151,11 @@ class FileUploadForm(FlaskForm):
     file = FileField("File", validators=[FileRequired()])
     submit = SubmitField("Upload")
 
-@app.route("/dashboard/account", methods=["GET", "POST"])
+@app.route("/dashboard/photo_edit", methods=["GET", "POST"])
 @login_required
 def dashboard_account():
     form = FileUploadForm()
+
     if form.validate_on_submit():
         file = form.file.data
         filename = secure_filename(file.filename)
@@ -162,7 +163,13 @@ def dashboard_account():
         current_user.image = filename
         db.session.commit()
         return redirect(url_for("dashboard_account"))
-    return render_template("account.html", form=form)
+    return render_template("photo_edit.html", form=form)
+
+
+@app.route("/dashboard/account", methods=["GET", "POST"])
+@login_required
+def photo_edit():
+    return render_template("account.html")
 
 @app.route("/dashboard/favorites", methods=["GET", "POST"])
 @login_required
