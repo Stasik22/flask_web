@@ -151,9 +151,9 @@ class FileUploadForm(FlaskForm):
     file = FileField("File", validators=[FileRequired()])
     submit = SubmitField("Upload")
 
-@app.route("/dashboard/photo_edit", methods=["GET", "POST"])
+@app.route("/dashboard/photo_edit",  methods=["GET", "POST"])
 @login_required
-def dashboard_account():
+def photo_edit():
     form = FileUploadForm()
 
     if form.validate_on_submit():
@@ -168,7 +168,7 @@ def dashboard_account():
 
 @app.route("/dashboard/account", methods=["GET", "POST"])
 @login_required
-def photo_edit():
+def dashboard_account():
     return render_template("account.html")
 
 @app.route("/dashboard/favorites", methods=["GET", "POST"])

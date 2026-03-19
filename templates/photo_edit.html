@@ -34,11 +34,11 @@
                 <span class="username">
                     {{ current_user.username }}
                 </span>
-                <a href="/dashboard">My account</a>
-                <a href="/favorites">Favorites</a><hr>
-                <a href="/helpdesk">Helpdesk</a>
-                <a href="/settings">Settings</a><hr>
-                <a href="/logout">Logout</a>
+                <a href="/dashboard/account"><img src="../static/images/icons/layer-minus (1).png" height="18" width="20" class="layer-minus"/>My account</a>
+                <a href="/dashboard/favorites" class="favorites_text"><img src="../static/images/icons/book-bookmark (1).png" height="18" width="20" class="bookmark_icon"/>Favorites</a>
+                <a href="/dashboard/helpdesk"><img src="../static/images/icons/user-headset.png" height="18" width="20" class="headset"/>Helpdesk</a>
+                <a href="/dashboard/settings"><img src="../static/images/icons/user-gear.png" height="18" width="20" class="gear_icon"/>Settings</a><hr>
+                <a href="/logout"><img src="../static/images/icons/user-logout.png" height="18" width="20" class="logout_icon"/>Logout</a>
             </div>
         </details>
 
@@ -63,17 +63,14 @@
 
     <div class="overlay">
     <div class="modal">
-
+        <button type="button" id="closePopupPhoto">✖</button>
         <h2 class="title">Profile photo</h2>
 
         <form method="POST" enctype="multipart/form-data">
-
             {{ form.hidden_tag() }}
 
             <div class="current_photo">
-
                 <p class="photo_text">Current photo</p>
-
                 <img src="{{ url_for('static', filename='images/users_icon_upload/' ~ (current_user.image or 'account_icon.png')) }}" class="account_icon_big">
 
             </div>
@@ -90,6 +87,12 @@
             </div>
 
         </form>
+
+        <script>
+            const close = document.getElementById("closePopupPhoto");
+
+            close.onclick = () => window.location.href= "/dashboard/account";
+        </script>
 
     </div>
 </div>

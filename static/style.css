@@ -996,12 +996,14 @@ summary::-webkit-details-marker {
 
 
 .account-icon {
-    width: 42px;
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     border-radius: 50%;
 
     transition:
-        transform 0.25s ease,
+        transform 0.3s ease,
         box-shadow 0.25s ease;
 }
 
@@ -1169,7 +1171,10 @@ summary::-webkit-details-marker {
 .username_my_account {
     flex: 1;
     justify-content: center;
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 16px;
+    padding-right: 30px;
     font-family: "Science Gothic", sans-serif;
     color: #111;
     font-size: 18px;
@@ -1189,17 +1194,16 @@ summary::-webkit-details-marker {
 }
 
 .modal {
-    background: white;
+    background-image: url("images/backgrounds/main/main_photo.jpg");
+        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 420px;
     max-width: 90%;
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
     text-align: center;
-}
-
-.title {
-    margin-bottom: 20px;
 }
 
 .current_photo {
@@ -1209,23 +1213,27 @@ summary::-webkit-details-marker {
 .photo_text {
     margin-bottom: 10px;
     color: #555;
+    justify-content: center;
+    font-family: "Science Gothic", sans-serif;
+    font-size: 15px;
+
 }
 
 .account_icon_big {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #ddd;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
-    transition: 0.3s;
+    border-radius: 50%;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .account_icon_big:hover {
-    transform: scale(1.05);
-    border: 4px solid #3b82f6;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
 .file_input {
@@ -1234,18 +1242,22 @@ summary::-webkit-details-marker {
 
 .file_label {
     display: inline-block;
-    background: #3b82f6;
+    background: rgba(55, 55, 55, 0.85);
     color: white;
     padding: 12px 25px;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.2s;
     margin-bottom: 20px;
+        transition:
+        transform 0.4s ease,
+        box-shadow 0.25s ease;
 }
 
 
 .file_label:hover {
-    background: #2563eb;
+    background: rgba(41, 41, 41, 0.95);
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
 
@@ -1264,10 +1276,80 @@ summary::-webkit-details-marker {
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.2s;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.25s ease;
 }
 
 
 .submit_btn:hover {
     background: #16a34a;
+    transform: scale(1.06);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.account-text_photo_edit {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.account-text_photo_edit a {
+    display: flex;
+    margin-left: 15px;
+    width: 73%;
+    align-items: center;
+    justify-content: center;
+    font-family: "Science Gothic", sans-serif;
+    color: #111;
+    font-size: 10px;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.account-text_photo_edit a:hover {
+    color: #757474;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+#closePopupPhoto {
+    border-radius: 30px;
+    float: right;
+    color: black;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+#closePopupPhoto:hover {
+    transform: scale(1.11);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.bookmark_icon {
+    padding-right: 10px;
+}
+
+.layer-minus {
+    padding-right: 10px;
+}
+.bookmark_saved {
+    padding-right: 10px;
+}
+
+.headset {
+    padding-right: 10px;
+}
+
+.gear_icon {
+    padding-right: 10px;
+}
+
+.logout_icon {
+    padding-right: 10px;
 }
