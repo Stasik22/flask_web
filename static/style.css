@@ -1108,13 +1108,25 @@ summary::-webkit-details-marker {
 .account-c {
     display: flex;
     align-items: flex-start;
+    position: relative;
     padding: 30px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     color: white;
+    flex-wrap: wrap;
+}
+
+.full-hr {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    margin-top: 7px;
+    border-radius: 10px;
+}
+
+.account-wrapper {
+    width: 100%;
 }
 
 .account-container ul {
@@ -1296,6 +1308,7 @@ summary::-webkit-details-marker {
 .account-text_photo_edit a {
     display: flex;
     margin-left: 15px;
+    margin-bottom: 15px;
     width: 73%;
     align-items: center;
     justify-content: center;
@@ -1352,4 +1365,89 @@ summary::-webkit-details-marker {
 
 .logout_icon {
     padding-right: 10px;
+}
+
+.account-inf {
+    font-family: "Science Gothic", sans-serif;
+    color: #111;
+    font-size: 15px;
+}
+
+.account-inf a {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-bottom: 7px;
+    align-items: center;
+}
+
+.account-inf-input input {
+    border-radius: 7px;
+    border: 1px solid #434343;
+    height: 30px;
+    width: 330px;
+    transition: 0.4s;
+    background: rgba(202, 202, 202, 0.12);
+    backdrop-filter: blur(12px);
+    font-family: "Science Gothic", sans-serif;
+    color: #111;
+    font-size: 13px;
+}
+
+.account-inf-input input:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+#first_name {
+    padding-left: 12px;
+    color: #535151;
+}
+
+.last_name {
+    margin-left: 500px;
+}
+
+
+#last_name {
+    padding-left: 12px;
+    color: #535151;
+    margin-left: 270px;
+}
+
+.account_address_city_inf {
+    padding-top: 20px;
+}
+
+.account_address_city_inf-input input {
+    border-radius: 7px;
+    border: 1px solid #434343;
+    height: 30px;
+    width: 330px;
+    transition: 0.4s;
+    background: rgba(202, 202, 202, 0.12);
+    backdrop-filter: blur(12px);
+    font-family: "Science Gothic", sans-serif;
+    color: #111;
+    font-size: 13px;
+}
+
+.account_address_city_inf-input input:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+#address {
+    padding-left: 12px;
+    color: #535151;
+}
+
+.city {
+    padding-top: 10px;
+    margin-left: 525px;
+}
+
+#city {
+    padding-left: 12px;
+    color: #535151;
+    margin-left: 270px;
 }

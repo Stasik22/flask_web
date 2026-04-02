@@ -50,6 +50,9 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
     image = db.Column(db.String(200), nullable=False, default="static/users_icon_upload/account_icon.png")
+    last_name = db.Column(db.String(100), nullable=False)
+    address = db.Column(db.String(150), nullable=False)
+    city = db.Column(db.String(100), nullable=False)
 
 
 
