@@ -1451,3 +1451,107 @@ summary::-webkit-details-marker {
     color: #535151;
     margin-left: 270px;
 }
+
+.account_birth_gender_contacts_inf {
+    padding-top: 20px;
+}
+
+.account_birth_gender_contacts_inf_input input {
+    border-radius: 7px;
+    border: 1px solid #434343;
+    height: 30px;
+    width: 330px;
+    transition: 0.4s;
+    background: rgba(202, 202, 202, 0.12);
+    backdrop-filter: blur(12px);
+    font-family: "Science Gothic", sans-serif;
+    color: #111;
+    font-size: 13px;
+}
+
+.account_birth_gender_contacts_inf select {
+    border-radius: 7px;
+    border: 1px solid #434343;
+    height: 34px;
+    width: 100px;
+    transition: 0.4s;
+    background: rgba(202, 202, 202, 0.12);
+    backdrop-filter: blur(12px);
+    font-family: "Science Gothic", sans-serif;
+    color: #000000;
+    font-size: 13px;
+}
+
+.account_birth_gender_contacts_inf select:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.account_birth_gender_contacts_inf_input input:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+#birth_date {
+    padding-left: 12px;
+    color: #535151;
+}
+
+.gender {
+    padding-top: 10px;
+    margin-left: 245px;
+}
+
+#birth_gender {
+    padding-left: 12px;
+    color: #535151;
+    margin-left: 37px;
+}
+
+.contacts {
+    margin-left: 147px;
+}
+
+#contact_number {
+    width: 340px;
+    margin-left: 130px;
+}
+
+
+.account_email_password_inf{
+    padding-top: 20px;
+}
+
+.account_email_password-input input {
+    border-radius: 7px;
+    border: 1px solid #434343;
+    height: 30px;
+    width: 330px;
+    transition: 0.4s;
+    background: rgba(202, 202, 202, 0.12);
+    backdrop-filter: blur(12px);
+    font-family: "Science Gothic", sans-serif;
+    color: #111;
+    font-size: 13px;
+}
+
+.account_email_password-input input:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+#account_email {
+    padding-left: 12px;
+    color: #535151;
+}
+
+.password {
+    padding-top: 10px;
+    margin-left: 547px;
+}
+
+#account_password {
+    padding-left: 12px;
+    color: #535151;
+    margin-left: 270px;
+}

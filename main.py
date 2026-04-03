@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 from wtforms import SubmitField, FileField
 from dotenv import load_dotenv
 import os
+import enum
 
 from flask_login import (
     UserMixin, login_user, logout_user,
@@ -31,6 +32,11 @@ login_manager = LoginManager(app)
 login_manager.login_view = "login"
 
 
+class GenderEnum(enum.Enum):
+    Male = "Male"
+    Female = "Female"
+
+
 class Car(db.Model):
     __tablename__ = "car"
 
@@ -53,6 +59,9 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(100), nullable=False)
     address = db.Column(db.String(150), nullable=False)
     city = db.Column(db.String(100), nullable=False)
+    date_of_birth = db.Column(db.Date, nullable=False)
+    gender = db.Column(db.Enum(GenderEnum, name="gender_type"),nullable=False)
+    contacts = db.Column(db.String(25), unique=True)
 
 
 
