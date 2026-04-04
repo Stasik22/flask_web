@@ -63,6 +63,7 @@
     </div>
 
     <div class="account-wrapper">
+        <form method="POST" action="/dashboard/account">
         <div class="account-c">
             <a href="/dashboard/photo_edit">
                 <img src="{{ url_for('static', filename='images/users_icon_upload/' ~ (current_user.image or 'account_icon.png')) }}" alt="account_logo" class="account-icon1">
@@ -111,12 +112,13 @@
                     <a class = "password">Password</a>
                     <div class="account_email_password-input">
                         <input type="email" name="account_email" id="account_email" placeholder="Your Email" value="{{ current_user.email }}">
-                        <input type="password" name="account_password" id="account_password" placeholder="Your Password" value="{{ current_user.password }}">
+                        <input type="password" name="account_password" placeholder="New Password">
                     </div>
                 </div>
             </div>
         </div>
-        <input type="submit" class="account-button" value="Save Changes">
+            <input type="submit" class="account-button" value="Save Changes">
+        </form>
     </div>
 
 

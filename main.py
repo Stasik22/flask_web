@@ -180,7 +180,24 @@ def photo_edit():
 
 @app.route("/dashboard/account", methods=["GET", "POST"])
 @login_required
-def dashboard_account():
+def update_account():
+    if request.method == "POST":
+        current_user.username = request.form.get("first_name")
+        current_user.last_name = request.form.get("last_name")
+        current_user.address = request.form.get("address")
+        current_user.city = request.form.get("city")
+        current_user.date_of_birth = request.form.get("birth_date")
+        current_user.gender = request.form.get("gender")
+        current_user.contacts = request.form.get("contact_number")
+        current_user.email = request.form.get("account_email")
+
+        password = request.form.get("account_password")
+        if password:
+            current_user.password = bcrypt.generate_password_hash(password).decode("utf-8")
+
+        db.session.commit()
+        return redirect(url_for("dashboard"))
+
     return render_template("account.html")
 
 @app.route("/dashboard/favorites", methods=["GET", "POST"])
