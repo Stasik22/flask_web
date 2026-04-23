@@ -98,7 +98,7 @@
                     <a class = "contacts">Contacts</a>
                     <div class= "account_birth_gender_contacts_inf_input">
                         <input type="date" name="birth_date" id="birth_date" value="{{ current_user.birth_date }}">
-                        <select name="gender" id="birth_gender" required>
+                        <select name="gender" id="birth_gender">
                             <option value="" disabled selected> {{ current_user.gender }}</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -112,12 +112,15 @@
                     <a class = "password">Password</a>
                     <div class="account_email_password-input">
                         <input type="email" name="account_email" id="account_email" placeholder="Your Email" value="{{ current_user.email }}">
-                        <input type="password" name="account_password" placeholder="New Password">
+                        <input type="password" name="account_password" id="account_password" placeholder="New Password">
+                            <button type="button" class="show_password_button" onclick="const p = document.getElementById('account_password'); p.type = p.type === 'password' ? 'text' : 'password';">
+                                <img src="../static/images/icons/pass_show.png" class="show_pass_img" alt="image">
+                            </button>
                     </div>
+                    <input type="submit" class="account-button" value="Save Changes">
                 </div>
             </div>
         </div>
-            <input type="submit" class="account-button" value="Save Changes">
         </form>
     </div>
 

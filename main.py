@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.file import FileRequired
+from tensorboard import default
 from werkzeug.utils import secure_filename
 from wtforms import SubmitField, FileField
 from dotenv import load_dotenv
@@ -62,6 +63,17 @@ class User(db.Model, UserMixin):
     date_of_birth = db.Column(db.Date, nullable=False)
     gender = db.Column(db.Enum(GenderEnum, name="gender_type"),nullable=False)
     contacts = db.Column(db.String(25), unique=True)
+
+
+    def validation_username_email(self, username, email):
+        self.username = username
+        self.email = email
+
+        if User.query.filter_by(username=username.data).first():
+            raise ValidationError("Username already exists")
+        if User.query.filter_by(email=email.data).first():
+            raise ValidationError("Email already exists")
+
 
 
 
@@ -174,7 +186,7 @@ def photo_edit():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         current_user.image = filename
         db.session.commit()
-        return redirect(url_for("dashboard_account"))
+        return redirect(url_for("update_account"))
     return render_template("photo_edit.html", form=form)
 
 
@@ -195,8 +207,11 @@ def update_account():
         if password:
             current_user.password = bcrypt.generate_password_hash(password).decode("utf-8")
 
+        if current_user.date_of_birth == "":
+            current_user.date_of_birth = None
+
         db.session.commit()
-        return redirect(url_for("dashboard"))
+        return redirect(url_for("update_account"))
 
     return render_template("account.html")
 

@@ -104,18 +104,22 @@ body {
 
 .account-button {
     display: inline-block;
+    float: right;
+    margin-top: 12px ;
     padding: 6px 12px;
-    color: #ffffff;
+    color: #1e1e1e;
+    background-color: #8a8a8a;
     text-decoration: none;
     font-family: "Alfa Slab One", serif;
     font-size: 14px;
     border-radius: 6px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor:pointer;
 }
 
 .account-button:hover {
-    color: #b6b6b6;
-    transform: scale(1.20);
+    color: #2e2e2e;
+    transform: scale(1.05);
 }
 
 
@@ -1109,7 +1113,7 @@ summary::-webkit-details-marker {
     display: flex;
     align-items: flex-start;
     position: relative;
-    padding: 30px;
+    padding: 30px 30px 20px 30px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(14px);
@@ -1554,4 +1558,18 @@ summary::-webkit-details-marker {
     padding-left: 12px;
     color: #535151;
     margin-left: 270px;
+}
+
+.show_password_button {
+    background-color: transparent;
+    transform: translateY(6px);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.show_password_button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
