@@ -592,29 +592,26 @@ p {
 
 
 .car-offers {
-    display: flex;
-    width: 1200px;
-    flex-direction: column;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 350px;
     margin-top: 25px;
-    margin-left: 60px;
+    margin-left: 200px;
 }
 
 .car-card {
-    display: grid;
-    grid-template-columns: 260px 1fr 120px;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 240px;
+    height: 400px;
     padding: 25px 35px;
-
     border-radius: 22px;
     background: linear-gradient(
         to right,
         rgba(40,40,40,0.85),
         rgba(60,60,60,0.85)
     );
-
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 
@@ -626,7 +623,7 @@ p {
 
 .car-card img {
     width: 240px;
-    height: 144px;
+    height: 250px;
     object-fit: contain;
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
     transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -644,15 +641,15 @@ p {
 }
 
 
-.car-card h3 {
+.car-card h5 {
     font-family: "Science Gothic", sans-serif;
-    font-size: 22px;
-    margin: 0;
+    font-size: 16px;
+    margin-bottom: 5px;
     color: white;
 }
 
 .car-card p {
-    font-size: 14px;
+    font-size: 17px;
     opacity: 0.85;
     margin: 0;
 }

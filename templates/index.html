@@ -98,15 +98,12 @@
         <div class="car-offers">
             {% for car in cars %}
             <div class="car-card">
-
-                <img src="{{ url_for('static', filename=car.image) }}" alt="car.name">
+                <img src="{{ url_for('static', filename=car.image) }}" alt="car.name" >
 
                 <div class="car-info">
-                    <h3>{{ car.name }}</h3>
-                    <p>
-                        {{ car.year }} • {{ car.brand|title }} •
-                        {{ "{:,}".format(car.price).replace(",", " ") }} €
-                    </p>
+                    <h5>{{ car.name }}</h5>
+                    {{ "{:,}".format(car.price).replace(",", " ") }} €
+                    <p>{{ car.year }}<br>  {{ car.brand|title }} <br> </p>
                 </div>
                 <button><a href="{{ url_for('offer', car_id=car.id) }}" class="btn">View offer</a></button>
             </div>
